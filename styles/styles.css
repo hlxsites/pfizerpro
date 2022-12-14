@@ -9,6 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
  :root {
   /* colors */
@@ -163,7 +164,7 @@ main input:hover {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 0;
 }
 
 main pre {
@@ -206,7 +207,7 @@ main img {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 0;
   }  
 }
 
