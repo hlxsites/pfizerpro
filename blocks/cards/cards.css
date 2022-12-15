@@ -10,6 +10,7 @@
     column-gap: 24px;
 }
 
+/* Card Items: where second card is lower than first, and third is lower than second */
 .cards > ul > li {
     overflow: hidden;
     grid-row: 2 / span 4;
@@ -17,17 +18,6 @@
     position: relative;
     padding: 0 24px;
 }
-.cards > ul > li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 4px;
-    height: 100%;
-    background: #0ebdba;;
-}
-
 .cards > ul > li:first-of-type:before {
     background: #0096ff;;
 }
@@ -40,24 +30,34 @@
     grid-row: 2 / span 3;
     z-index: 2;
 }
+
 .cards > ul > li:last-of-type {
     grid-row: 6 / 3;
     z-index: 3;
 }
+/* // Card Items */
 
+/* Card left rail */
+.cards > ul > li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 4px;
+    height: 100%;
+    background:#0097ff;
+}
+.cards > ul > li:nth-of-type(2):before {
+    background: #0ebdba;
+}
 .cards > ul > li:last-of-type:before {
-    background: #68bb6e;
+    background:#68bb6e;
 }
+/* // Card left rail */
 
-
-
-.cards > ul > li {
-    border: 0;
- /* padding: 24px 4px 24px 0; */
-}
 
 .cards .cards-card-body {
-    margin: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -65,10 +65,10 @@
 }
 
 .cards .cards-card-image {
-    line-height: 0;
+    display: none;
 }
 
-.cards-card-body > *:first-child {
+.cards .cards-card-body > *:first-child {
     margin-top: 0;
     margin-bottom: 0;
     font-family: var(--body-font-family);
@@ -76,7 +76,7 @@
     font-weight: 300;
     color: rgb(0,0,78);
 }
-.cards-card-body > *:nth-child(2){
+.cards .cards-card-body > *:nth-child(2){
     font-family: var(--body-font-family);
     margin-top: 0;
     font-size: 16px;
@@ -84,7 +84,7 @@
     color: rgb(56, 56, 56);
     flex: 1 1 auto;
 }
-.cards-card-body .button {
+.cards .cards-card-body .button {
     padding: 0;
     margin: 0;
     width: 100%;
