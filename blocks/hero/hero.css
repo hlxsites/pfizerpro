@@ -39,7 +39,7 @@ main .hero div {
 
 main .hero h1 {
     width: 45%;
-    font-family: Inter;
+    font-family: var(--body-font-family);
     font-size: 72px;
     letter-spacing: -2px;
     line-height: 80px;

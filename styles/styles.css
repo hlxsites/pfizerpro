@@ -20,8 +20,13 @@
   --highlight-background-color: #ccc;
   --text-color: #000;
 
+  --button-color: rgb(15, 0, 201);
+  --button-background-color: var(--background-color);
+  --button-hover-background-color: var(--button-color);
+  --button-hover-color: var(--background-color);
+
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: 'Inter', helvetica, ubuntu, roboto, noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -110,18 +115,18 @@ pre {
 
 a.button:any-link, button {
   font-family: var(--body-font-family);
+  font-size: 16px;
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
+  border: 2px solid var(--button-color);
+  padding: 10px 38px;
   text-align: center;
   font-style: normal; 
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
+  color: var( --button-color);
+  background-color: var( --button-background-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -129,7 +134,8 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var(--button-hover-background-color);
+  color: var(--button-hover-color);
   cursor: pointer;
 }
 
