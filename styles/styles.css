@@ -9,9 +9,822 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
- :root {
+:root {
+  /* vars from pfizer code */
+  --helix-core-primary-primary: rgba(0, 0, 201, 1);
+  --helix-core-primary-mid-primary: rgba(64, 64, 215, 1);
+  --helix-core-primary-dark-primary: rgba(0, 0, 78, 1);
+  --helix-core-primary-light-primary: rgba(127, 127, 228, 1);
+  --helix-core-primary-lighter-primary: rgba(191, 191, 241, 1);
+  --helix-core-secondary-secondary: rgba(0, 149, 255, 1);
+  --helix-core-secondary-secondary-light: rgba(102, 191, 255, 1);
+  --helix-core-accent-accent-1: rgba(0, 149, 255, 1);
+  --helix-core-accent-accent-2: rgba(13, 189, 186, 1);
+  --helix-core-accent-accent-3: rgba(103, 187, 110, 1);
+  --helix-core-neutrals-black: rgba(56, 56, 56, 1);
+  --helix-core-neutrals-neutral: rgba(111, 111, 111, 1);
+  --helix-core-neutrals-neutral-light: rgba(193, 199, 205, 1);
+  --helix-core-neutrals-neutral-dark: rgba(161, 170, 177, 1);
+  --helix-core-neutrals-white: rgba(255, 255, 255, 1);
+  --helix-core-utility-error: rgba(225, 25, 0, 1);
+  --helix-core-utility-success: rgba(5, 163, 87, 1);
+  --helix-core-utility-warning: rgba(255, 192, 67, 1);
+  --helix-core-utility-link: rgba(0, 100, 193, 1);
+  --helix-core-utility-notification: rgba(232, 83, 64, 1);
+  --helix-core-background-ab-background: rgba(242, 244, 247, 1);
+  --helix-core-background-unselected-tab: rgba(241, 241, 241, 1);
+  --helix-core-background-hover-state: rgba(242, 242, 252, 1);
+  --helix-core-background-badge-misc: rgba(226, 213, 253, 1);
+  --helix-core-background-success: rgba(230, 246, 238, 1);
+  --helix-core-table-30-primary: rgba(0, 0, 201, 0.3);
+  --helix-core-table-30-light-primary: rgba(127, 127, 228, 0.3);
+  --helix-core-table-5-primary: rgba(0, 0, 201, 0.05);
+  --helix-core-table-content-bg: rgba(242, 242, 242, 1);
+  --helix-core-type-preset-1-1-xl-desktop-h1-font-size: 72px;
+  --helix-core-type-preset-1-1-xl-desktop-h1-text-decoration: none;
+  --helix-core-type-preset-1-1-xl-desktop-h1-font-family: Inter;
+  --helix-core-type-preset-1-1-xl-desktop-h1-font-weight: 300;
+  --helix-core-type-preset-1-1-xl-desktop-h1-font-style: normal;
+  --helix-core-type-preset-1-1-xl-desktop-h1-font-stretch: normal;
+  --helix-core-type-preset-1-1-xl-desktop-h1-font-style-old: Light;
+  --helix-core-type-preset-1-1-xl-desktop-h1-letter-spacing: -2px;
+  --helix-core-type-preset-1-1-xl-desktop-h1-line-height: 80px;
+  --helix-core-type-preset-1-1-xl-desktop-h1-paragraph-indent: 0;
+  --helix-core-type-preset-1-1-xl-desktop-h1-paragraph-spacing: 0;
+  --helix-core-type-preset-1-1-xl-desktop-h1-text-case: none;
+  --helix-core-type-preset-1-2-l-laptop-h1-font-size: 64px;
+  --helix-core-type-preset-1-2-l-laptop-h1-text-decoration: none;
+  --helix-core-type-preset-1-2-l-laptop-h1-font-family: Inter;
+  --helix-core-type-preset-1-2-l-laptop-h1-font-weight: 300;
+  --helix-core-type-preset-1-2-l-laptop-h1-font-style: normal;
+  --helix-core-type-preset-1-2-l-laptop-h1-font-stretch: normal;
+  --helix-core-type-preset-1-2-l-laptop-h1-font-style-old: Light;
+  --helix-core-type-preset-1-2-l-laptop-h1-letter-spacing: -1.78px;
+  --helix-core-type-preset-1-2-l-laptop-h1-line-height: 72px;
+  --helix-core-type-preset-1-2-l-laptop-h1-paragraph-indent: 0;
+  --helix-core-type-preset-1-2-l-laptop-h1-paragraph-spacing: 0;
+  --helix-core-type-preset-1-2-l-laptop-h1-text-case: none;
+  --helix-core-type-preset-1-3-m-tablet-h1-font-size: 56px;
+  --helix-core-type-preset-1-3-m-tablet-h1-text-decoration: none;
+  --helix-core-type-preset-1-3-m-tablet-h1-font-family: Inter;
+  --helix-core-type-preset-1-3-m-tablet-h1-font-weight: 300;
+  --helix-core-type-preset-1-3-m-tablet-h1-font-style: normal;
+  --helix-core-type-preset-1-3-m-tablet-h1-font-stretch: normal;
+  --helix-core-type-preset-1-3-m-tablet-h1-font-style-old: Light;
+  --helix-core-type-preset-1-3-m-tablet-h1-letter-spacing: -1.56px;
+  --helix-core-type-preset-1-3-m-tablet-h1-line-height: 64px;
+  --helix-core-type-preset-1-3-m-tablet-h1-paragraph-indent: 0;
+  --helix-core-type-preset-1-3-m-tablet-h1-paragraph-spacing: 0;
+  --helix-core-type-preset-1-3-m-tablet-h1-text-case: none;
+  --helix-core-type-preset-1-4-s-mobile-h1-font-size: 48px;
+  --helix-core-type-preset-1-4-s-mobile-h1-text-decoration: none;
+  --helix-core-type-preset-1-4-s-mobile-h1-font-family: Inter;
+  --helix-core-type-preset-1-4-s-mobile-h1-font-weight: 300;
+  --helix-core-type-preset-1-4-s-mobile-h1-font-style: normal;
+  --helix-core-type-preset-1-4-s-mobile-h1-font-stretch: normal;
+  --helix-core-type-preset-1-4-s-mobile-h1-font-style-old: Light;
+  --helix-core-type-preset-1-4-s-mobile-h1-letter-spacing: 0;
+  --helix-core-type-preset-1-4-s-mobile-h1-line-height: 56px;
+  --helix-core-type-preset-1-4-s-mobile-h1-paragraph-indent: 0;
+  --helix-core-type-preset-1-4-s-mobile-h1-paragraph-spacing: 0;
+  --helix-core-type-preset-1-4-s-mobile-h1-text-case: none;
+  --helix-core-type-preset-1-5-xs-mobile-h1-font-size: 40px;
+  --helix-core-type-preset-1-5-xs-mobile-h1-text-decoration: none;
+  --helix-core-type-preset-1-5-xs-mobile-h1-font-family: Inter;
+  --helix-core-type-preset-1-5-xs-mobile-h1-font-weight: 300;
+  --helix-core-type-preset-1-5-xs-mobile-h1-font-style: normal;
+  --helix-core-type-preset-1-5-xs-mobile-h1-font-stretch: normal;
+  --helix-core-type-preset-1-5-xs-mobile-h1-font-style-old: Light;
+  --helix-core-type-preset-1-5-xs-mobile-h1-letter-spacing: 0;
+  --helix-core-type-preset-1-5-xs-mobile-h1-line-height: 48px;
+  --helix-core-type-preset-1-5-xs-mobile-h1-paragraph-indent: 0;
+  --helix-core-type-preset-1-5-xs-mobile-h1-paragraph-spacing: 0;
+  --helix-core-type-preset-1-5-xs-mobile-h1-text-case: none;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-font-size: 48px;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-text-decoration: none;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-font-family: Inter;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-font-weight: 300;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-font-style: normal;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-font-stretch: normal;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-font-style-old: Light;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-letter-spacing: -1px;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-line-height: 56px;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-paragraph-indent: 0;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-paragraph-spacing: 0;
+  --helix-core-type-preset-2-1-xl-l-m-screens-h2-text-case: none;
+  --helix-core-type-preset-2-2-s-mobile-h2-font-size: 40px;
+  --helix-core-type-preset-2-2-s-mobile-h2-text-decoration: none;
+  --helix-core-type-preset-2-2-s-mobile-h2-font-family: Inter;
+  --helix-core-type-preset-2-2-s-mobile-h2-font-weight: 300;
+  --helix-core-type-preset-2-2-s-mobile-h2-font-style: normal;
+  --helix-core-type-preset-2-2-s-mobile-h2-font-stretch: normal;
+  --helix-core-type-preset-2-2-s-mobile-h2-font-style-old: Light;
+  --helix-core-type-preset-2-2-s-mobile-h2-letter-spacing: -0.83px;
+  --helix-core-type-preset-2-2-s-mobile-h2-line-height: 48px;
+  --helix-core-type-preset-2-2-s-mobile-h2-paragraph-indent: 0;
+  --helix-core-type-preset-2-2-s-mobile-h2-paragraph-spacing: 0;
+  --helix-core-type-preset-2-2-s-mobile-h2-text-case: none;
+  --helix-core-type-preset-2-3-xs-mobile-h2-font-size: 32px;
+  --helix-core-type-preset-2-3-xs-mobile-h2-text-decoration: none;
+  --helix-core-type-preset-2-3-xs-mobile-h2-font-family: Inter;
+  --helix-core-type-preset-2-3-xs-mobile-h2-font-weight: 300;
+  --helix-core-type-preset-2-3-xs-mobile-h2-font-style: normal;
+  --helix-core-type-preset-2-3-xs-mobile-h2-font-stretch: normal;
+  --helix-core-type-preset-2-3-xs-mobile-h2-font-style-old: Light;
+  --helix-core-type-preset-2-3-xs-mobile-h2-letter-spacing: -0.67px;
+  --helix-core-type-preset-2-3-xs-mobile-h2-line-height: 40px;
+  --helix-core-type-preset-2-3-xs-mobile-h2-paragraph-indent: 0;
+  --helix-core-type-preset-2-3-xs-mobile-h2-paragraph-spacing: 0;
+  --helix-core-type-preset-2-3-xs-mobile-h2-text-case: none;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-font-size: 32px;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-text-decoration: none;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-font-family: Inter;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-font-weight: 300;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-font-style: normal;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-font-stretch: normal;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-font-style-old: Light;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-letter-spacing: 0.25px;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-line-height: 40px;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-paragraph-indent: 0;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-paragraph-spacing: 0;
+  --helix-core-type-preset-3-1-xl-l-m-s-screens-h3-text-case: none;
+  --helix-core-type-preset-3-2-xs-mobile-h3-font-size: 24px;
+  --helix-core-type-preset-3-2-xs-mobile-h3-text-decoration: none;
+  --helix-core-type-preset-3-2-xs-mobile-h3-font-family: Inter;
+  --helix-core-type-preset-3-2-xs-mobile-h3-font-weight: 300;
+  --helix-core-type-preset-3-2-xs-mobile-h3-font-style: normal;
+  --helix-core-type-preset-3-2-xs-mobile-h3-font-stretch: normal;
+  --helix-core-type-preset-3-2-xs-mobile-h3-font-style-old: Light;
+  --helix-core-type-preset-3-2-xs-mobile-h3-letter-spacing: 0.19px;
+  --helix-core-type-preset-3-2-xs-mobile-h3-line-height: 32px;
+  --helix-core-type-preset-3-2-xs-mobile-h3-paragraph-indent: 0;
+  --helix-core-type-preset-3-2-xs-mobile-h3-paragraph-spacing: 0;
+  --helix-core-type-preset-3-2-xs-mobile-h3-text-case: none;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-font-size: 24px;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-text-decoration: none;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-font-family: Inter;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-font-weight: 400;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-font-style: normal;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-font-stretch: normal;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-font-style-old: Regular;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-letter-spacing: 0.25px;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-line-height: 32px;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-paragraph-indent: 0;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-paragraph-spacing: 0;
+  --helix-core-type-preset-4-1-xl-l-m-s-screens-h4-text-case: none;
+  --helix-core-type-preset-4-2-xs-mobile-h4-font-size: 20px;
+  --helix-core-type-preset-4-2-xs-mobile-h4-text-decoration: none;
+  --helix-core-type-preset-4-2-xs-mobile-h4-font-family: Inter;
+  --helix-core-type-preset-4-2-xs-mobile-h4-font-weight: 400;
+  --helix-core-type-preset-4-2-xs-mobile-h4-font-style: normal;
+  --helix-core-type-preset-4-2-xs-mobile-h4-font-stretch: normal;
+  --helix-core-type-preset-4-2-xs-mobile-h4-font-style-old: Regular;
+  --helix-core-type-preset-4-2-xs-mobile-h4-letter-spacing: 0.21px;
+  --helix-core-type-preset-4-2-xs-mobile-h4-line-height: 28px;
+  --helix-core-type-preset-4-2-xs-mobile-h4-paragraph-indent: 0;
+  --helix-core-type-preset-4-2-xs-mobile-h4-paragraph-spacing: 0;
+  --helix-core-type-preset-4-2-xs-mobile-h4-text-case: none;
+  --helix-core-type-preset-5-h5-font-size: 18px;
+  --helix-core-type-preset-5-h5-text-decoration: none;
+  --helix-core-type-preset-5-h5-font-family: Inter;
+  --helix-core-type-preset-5-h5-font-weight: 400;
+  --helix-core-type-preset-5-h5-font-style: normal;
+  --helix-core-type-preset-5-h5-font-stretch: normal;
+  --helix-core-type-preset-5-h5-font-style-old: Regular;
+  --helix-core-type-preset-5-h5-letter-spacing: 0.25px;
+  --helix-core-type-preset-5-h5-line-height: 28px;
+  --helix-core-type-preset-5-h5-paragraph-indent: 0;
+  --helix-core-type-preset-5-h5-paragraph-spacing: 0;
+  --helix-core-type-preset-5-h5-text-case: none;
+  --helix-core-type-preset-5-h5-bold-font-size: 18px;
+  --helix-core-type-preset-5-h5-bold-text-decoration: none;
+  --helix-core-type-preset-5-h5-bold-font-family: Inter;
+  --helix-core-type-preset-5-h5-bold-font-weight: 700;
+  --helix-core-type-preset-5-h5-bold-font-style: normal;
+  --helix-core-type-preset-5-h5-bold-font-stretch: normal;
+  --helix-core-type-preset-5-h5-bold-font-style-old: Bold;
+  --helix-core-type-preset-5-h5-bold-letter-spacing: 0.25px;
+  --helix-core-type-preset-5-h5-bold-line-height: 28px;
+  --helix-core-type-preset-5-h5-bold-paragraph-indent: 0;
+  --helix-core-type-preset-5-h5-bold-paragraph-spacing: 0;
+  --helix-core-type-preset-5-h5-bold-text-case: none;
+  --helix-core-type-preset-6-1-preset-h6-font-size: 16px;
+  --helix-core-type-preset-6-1-preset-h6-text-decoration: none;
+  --helix-core-type-preset-6-1-preset-h6-font-family: Inter;
+  --helix-core-type-preset-6-1-preset-h6-font-weight: 400;
+  --helix-core-type-preset-6-1-preset-h6-font-style: normal;
+  --helix-core-type-preset-6-1-preset-h6-font-stretch: normal;
+  --helix-core-type-preset-6-1-preset-h6-font-style-old: Regular;
+  --helix-core-type-preset-6-1-preset-h6-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-1-preset-h6-line-height: 24px;
+  --helix-core-type-preset-6-1-preset-h6-paragraph-indent: 0;
+  --helix-core-type-preset-6-1-preset-h6-paragraph-spacing: 0;
+  --helix-core-type-preset-6-1-preset-h6-text-case: none;
+  --helix-core-type-preset-6-h6-font-size: 16px;
+  --helix-core-type-preset-6-h6-text-decoration: none;
+  --helix-core-type-preset-6-h6-font-family: Inter;
+  --helix-core-type-preset-6-h6-font-weight: 400;
+  --helix-core-type-preset-6-h6-font-style: normal;
+  --helix-core-type-preset-6-h6-font-stretch: normal;
+  --helix-core-type-preset-6-h6-font-style-old: Regular;
+  --helix-core-type-preset-6-h6-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-h6-line-height: 24px;
+  --helix-core-type-preset-6-h6-paragraph-indent: 0;
+  --helix-core-type-preset-6-h6-paragraph-spacing: 0;
+  --helix-core-type-preset-6-h6-text-case: none;
+  --helix-core-type-preset-6-h6-bold-font-size: 16px;
+  --helix-core-type-preset-6-h6-bold-text-decoration: none;
+  --helix-core-type-preset-6-h6-bold-font-family: Inter;
+  --helix-core-type-preset-6-h6-bold-font-weight: 700;
+  --helix-core-type-preset-6-h6-bold-font-style: normal;
+  --helix-core-type-preset-6-h6-bold-font-stretch: normal;
+  --helix-core-type-preset-6-h6-bold-font-style-old: Bold;
+  --helix-core-type-preset-6-h6-bold-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-h6-bold-line-height: 24px;
+  --helix-core-type-preset-6-h6-bold-paragraph-indent: 0;
+  --helix-core-type-preset-6-h6-bold-paragraph-spacing: 0;
+  --helix-core-type-preset-6-h6-bold-text-case: none;
+  --helix-core-type-preset-6-paragraph-font-size: 16px;
+  --helix-core-type-preset-6-paragraph-text-decoration: none;
+  --helix-core-type-preset-6-paragraph-font-family: Inter;
+  --helix-core-type-preset-6-paragraph-font-weight: 400;
+  --helix-core-type-preset-6-paragraph-font-style: normal;
+  --helix-core-type-preset-6-paragraph-font-stretch: normal;
+  --helix-core-type-preset-6-paragraph-font-style-old: Regular;
+  --helix-core-type-preset-6-paragraph-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-paragraph-line-height: 24px;
+  --helix-core-type-preset-6-paragraph-paragraph-indent: 0;
+  --helix-core-type-preset-6-paragraph-paragraph-spacing: 0;
+  --helix-core-type-preset-6-paragraph-text-case: none;
+  --helix-core-type-preset-6-paragraph-bold-font-size: 16px;
+  --helix-core-type-preset-6-paragraph-bold-text-decoration: none;
+  --helix-core-type-preset-6-paragraph-bold-font-family: Inter;
+  --helix-core-type-preset-6-paragraph-bold-font-weight: 700;
+  --helix-core-type-preset-6-paragraph-bold-font-style: normal;
+  --helix-core-type-preset-6-paragraph-bold-font-stretch: normal;
+  --helix-core-type-preset-6-paragraph-bold-font-style-old: Bold;
+  --helix-core-type-preset-6-paragraph-bold-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-paragraph-bold-line-height: 24px;
+  --helix-core-type-preset-6-paragraph-bold-paragraph-indent: 0;
+  --helix-core-type-preset-6-paragraph-bold-paragraph-spacing: 0;
+  --helix-core-type-preset-6-paragraph-bold-text-case: none;
+  --helix-core-type-preset-6-large-button-font-size: 18px;
+  --helix-core-type-preset-6-large-button-text-decoration: underline;
+  --helix-core-type-preset-6-large-button-font-family: Inter;
+  --helix-core-type-preset-6-large-button-font-weight: 700;
+  --helix-core-type-preset-6-large-button-font-style: normal;
+  --helix-core-type-preset-6-large-button-font-stretch: normal;
+  --helix-core-type-preset-6-large-button-font-style-old: Bold;
+  --helix-core-type-preset-6-large-button-letter-spacing: 0.5px;
+  --helix-core-type-preset-6-large-button-line-height: 28px;
+  --helix-core-type-preset-6-large-button-paragraph-indent: 0;
+  --helix-core-type-preset-6-large-button-paragraph-spacing: 0;
+  --helix-core-type-preset-6-large-button-text-case: none;
+  --helix-core-type-preset-6-button-font-size: 16px;
+  --helix-core-type-preset-6-button-text-decoration: none;
+  --helix-core-type-preset-6-button-font-family: Inter;
+  --helix-core-type-preset-6-button-font-weight: 700;
+  --helix-core-type-preset-6-button-font-style: normal;
+  --helix-core-type-preset-6-button-font-stretch: normal;
+  --helix-core-type-preset-6-button-font-style-old: Bold;
+  --helix-core-type-preset-6-button-letter-spacing: 0.5px;
+  --helix-core-type-preset-6-button-line-height: 24px;
+  --helix-core-type-preset-6-button-paragraph-indent: 0;
+  --helix-core-type-preset-6-button-paragraph-spacing: 0;
+  --helix-core-type-preset-6-button-text-case: none;
+  --helix-core-type-preset-6-button-underlined-font-size: 16px;
+  --helix-core-type-preset-6-button-underlined-text-decoration: underline;
+  --helix-core-type-preset-6-button-underlined-font-family: Inter;
+  --helix-core-type-preset-6-button-underlined-font-weight: 700;
+  --helix-core-type-preset-6-button-underlined-font-style: normal;
+  --helix-core-type-preset-6-button-underlined-font-stretch: normal;
+  --helix-core-type-preset-6-button-underlined-font-style-old: Bold;
+  --helix-core-type-preset-6-button-underlined-letter-spacing: 0.5px;
+  --helix-core-type-preset-6-button-underlined-line-height: 24px;
+  --helix-core-type-preset-6-button-underlined-paragraph-indent: 0;
+  --helix-core-type-preset-6-button-underlined-paragraph-spacing: 0;
+  --helix-core-type-preset-6-button-underlined-text-case: none;
+  --helix-core-type-preset-6-small-button-font-size: 14px;
+  --helix-core-type-preset-6-small-button-text-decoration: none;
+  --helix-core-type-preset-6-small-button-font-family: Inter;
+  --helix-core-type-preset-6-small-button-font-weight: 700;
+  --helix-core-type-preset-6-small-button-font-style: normal;
+  --helix-core-type-preset-6-small-button-font-stretch: normal;
+  --helix-core-type-preset-6-small-button-font-style-old: Bold;
+  --helix-core-type-preset-6-small-button-letter-spacing: 0.5px;
+  --helix-core-type-preset-6-small-button-line-height: 20px;
+  --helix-core-type-preset-6-small-button-paragraph-indent: 0;
+  --helix-core-type-preset-6-small-button-paragraph-spacing: 0;
+  --helix-core-type-preset-6-small-button-text-case: none;
+  --helix-core-type-preset-6-small-button-underlined-font-size: 14px;
+  --helix-core-type-preset-6-small-button-underlined-text-decoration: underline;
+  --helix-core-type-preset-6-small-button-underlined-font-family: Inter;
+  --helix-core-type-preset-6-small-button-underlined-font-weight: 700;
+  --helix-core-type-preset-6-small-button-underlined-font-style: normal;
+  --helix-core-type-preset-6-small-button-underlined-font-stretch: normal;
+  --helix-core-type-preset-6-small-button-underlined-font-style-old: Bold;
+  --helix-core-type-preset-6-small-button-underlined-letter-spacing: 0.5px;
+  --helix-core-type-preset-6-small-button-underlined-line-height: 20px;
+  --helix-core-type-preset-6-small-button-underlined-paragraph-indent: 0;
+  --helix-core-type-preset-6-small-button-underlined-paragraph-spacing: 0;
+  --helix-core-type-preset-6-small-button-underlined-text-case: none;
+  --helix-core-type-preset-6-tab-text-font-size: 14px;
+  --helix-core-type-preset-6-tab-text-text-decoration: none;
+  --helix-core-type-preset-6-tab-text-font-family: Inter;
+  --helix-core-type-preset-6-tab-text-font-weight: 400;
+  --helix-core-type-preset-6-tab-text-font-style: normal;
+  --helix-core-type-preset-6-tab-text-font-stretch: normal;
+  --helix-core-type-preset-6-tab-text-font-style-old: Regular;
+  --helix-core-type-preset-6-tab-text-letter-spacing: 0.5px;
+  --helix-core-type-preset-6-tab-text-line-height: 16px;
+  --helix-core-type-preset-6-tab-text-paragraph-indent: 0;
+  --helix-core-type-preset-6-tab-text-paragraph-spacing: 0;
+  --helix-core-type-preset-6-tab-text-text-case: none;
+  --helix-core-type-preset-6-external-link-font-size: 16px;
+  --helix-core-type-preset-6-external-link-text-decoration: underline;
+  --helix-core-type-preset-6-external-link-font-family: Inter;
+  --helix-core-type-preset-6-external-link-font-weight: 400;
+  --helix-core-type-preset-6-external-link-font-style: normal;
+  --helix-core-type-preset-6-external-link-font-stretch: normal;
+  --helix-core-type-preset-6-external-link-font-style-old: Regular;
+  --helix-core-type-preset-6-external-link-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-external-link-line-height: 24px;
+  --helix-core-type-preset-6-external-link-paragraph-indent: 0;
+  --helix-core-type-preset-6-external-link-paragraph-spacing: 0;
+  --helix-core-type-preset-6-external-link-text-case: none;
+  --helix-core-type-preset-6-small-external-link-font-size: 12px;
+  --helix-core-type-preset-6-small-external-link-text-decoration: underline;
+  --helix-core-type-preset-6-small-external-link-font-family: Inter;
+  --helix-core-type-preset-6-small-external-link-font-weight: 400;
+  --helix-core-type-preset-6-small-external-link-font-style: normal;
+  --helix-core-type-preset-6-small-external-link-font-stretch: normal;
+  --helix-core-type-preset-6-small-external-link-font-style-old: Regular;
+  --helix-core-type-preset-6-small-external-link-letter-spacing: 0.25px;
+  --helix-core-type-preset-6-small-external-link-line-height: 24px;
+  --helix-core-type-preset-6-small-external-link-paragraph-indent: 0;
+  --helix-core-type-preset-6-small-external-link-paragraph-spacing: 0;
+  --helix-core-type-preset-6-small-external-link-text-case: none;
+  --helix-core-type-preset-7-subheading-font-size: 14px;
+  --helix-core-type-preset-7-subheading-text-decoration: none;
+  --helix-core-type-preset-7-subheading-font-family: Inter;
+  --helix-core-type-preset-7-subheading-font-weight: 400;
+  --helix-core-type-preset-7-subheading-font-style: normal;
+  --helix-core-type-preset-7-subheading-font-stretch: normal;
+  --helix-core-type-preset-7-subheading-font-style-old: Regular;
+  --helix-core-type-preset-7-subheading-letter-spacing: 0.5px;
+  --helix-core-type-preset-7-subheading-line-height: 20px;
+  --helix-core-type-preset-7-subheading-paragraph-indent: 0;
+  --helix-core-type-preset-7-subheading-paragraph-spacing: 0;
+  --helix-core-type-preset-7-subheading-text-case: none;
+  --helix-core-type-preset-7-subheading-link-font-size: 14px;
+  --helix-core-type-preset-7-subheading-link-text-decoration: underline;
+  --helix-core-type-preset-7-subheading-link-font-family: Inter;
+  --helix-core-type-preset-7-subheading-link-font-weight: 400;
+  --helix-core-type-preset-7-subheading-link-font-style: normal;
+  --helix-core-type-preset-7-subheading-link-font-stretch: normal;
+  --helix-core-type-preset-7-subheading-link-font-style-old: Regular;
+  --helix-core-type-preset-7-subheading-link-letter-spacing: 0.5px;
+  --helix-core-type-preset-7-subheading-link-line-height: 20px;
+  --helix-core-type-preset-7-subheading-link-paragraph-indent: 0;
+  --helix-core-type-preset-7-subheading-link-paragraph-spacing: 0;
+  --helix-core-type-preset-7-subheading-link-text-case: none;
+  --helix-core-type-preset-7-bullet-point-font-size: 16px;
+  --helix-core-type-preset-7-bullet-point-text-decoration: none;
+  --helix-core-type-preset-7-bullet-point-font-family: Inter;
+  --helix-core-type-preset-7-bullet-point-font-weight: 400;
+  --helix-core-type-preset-7-bullet-point-font-style: normal;
+  --helix-core-type-preset-7-bullet-point-font-stretch: normal;
+  --helix-core-type-preset-7-bullet-point-font-style-old: Regular;
+  --helix-core-type-preset-7-bullet-point-letter-spacing: 0.25px;
+  --helix-core-type-preset-7-bullet-point-line-height: 24px;
+  --helix-core-type-preset-7-bullet-point-paragraph-indent: 0;
+  --helix-core-type-preset-7-bullet-point-paragraph-spacing: 0;
+  --helix-core-type-preset-7-bullet-point-text-case: none;
+  --helix-core-type-preset-8-fineprint-font-size: 14px;
+  --helix-core-type-preset-8-fineprint-text-decoration: none;
+  --helix-core-type-preset-8-fineprint-font-family: Inter;
+  --helix-core-type-preset-8-fineprint-font-weight: 400;
+  --helix-core-type-preset-8-fineprint-font-style: normal;
+  --helix-core-type-preset-8-fineprint-font-stretch: normal;
+  --helix-core-type-preset-8-fineprint-font-style-old: Regular;
+  --helix-core-type-preset-8-fineprint-letter-spacing: 0.5px;
+  --helix-core-type-preset-8-fineprint-line-height: 20px;
+  --helix-core-type-preset-8-fineprint-paragraph-indent: 0;
+  --helix-core-type-preset-8-fineprint-paragraph-spacing: 0;
+  --helix-core-type-preset-8-fineprint-text-case: none;
+  --helix-core-type-preset-8-caption-large-font-size: 14px;
+  --helix-core-type-preset-8-caption-large-text-decoration: none;
+  --helix-core-type-preset-8-caption-large-font-family: Inter;
+  --helix-core-type-preset-8-caption-large-font-weight: 700;
+  --helix-core-type-preset-8-caption-large-font-style: normal;
+  --helix-core-type-preset-8-caption-large-font-stretch: normal;
+  --helix-core-type-preset-8-caption-large-font-style-old: Bold;
+  --helix-core-type-preset-8-caption-large-letter-spacing: 0.5px;
+  --helix-core-type-preset-8-caption-large-line-height: 20px;
+  --helix-core-type-preset-8-caption-large-paragraph-indent: 0;
+  --helix-core-type-preset-8-caption-large-paragraph-spacing: 0;
+  --helix-core-type-preset-8-caption-large-text-case: none;
+  --helix-core-type-preset-8-caption-capitalised-font-size: 12px;
+  --helix-core-type-preset-8-caption-capitalised-text-decoration: none;
+  --helix-core-type-preset-8-caption-capitalised-font-family: Inter;
+  --helix-core-type-preset-8-caption-capitalised-font-weight: 700;
+  --helix-core-type-preset-8-caption-capitalised-font-style: normal;
+  --helix-core-type-preset-8-caption-capitalised-font-stretch: normal;
+  --helix-core-type-preset-8-caption-capitalised-font-style-old: Bold;
+  --helix-core-type-preset-8-caption-capitalised-letter-spacing: 0.5px;
+  --helix-core-type-preset-8-caption-capitalised-line-height: 16px;
+  --helix-core-type-preset-8-caption-capitalised-paragraph-indent: 0;
+  --helix-core-type-preset-8-caption-capitalised-paragraph-spacing: 0;
+  --helix-core-type-preset-8-caption-capitalised-text-case: uppercase;
+  --helix-core-type-preset-8-caption-proper-case-font-size: 12px;
+  --helix-core-type-preset-8-caption-proper-case-text-decoration: none;
+  --helix-core-type-preset-8-caption-proper-case-font-family: Inter;
+  --helix-core-type-preset-8-caption-proper-case-font-weight: 700;
+  --helix-core-type-preset-8-caption-proper-case-font-style: normal;
+  --helix-core-type-preset-8-caption-proper-case-font-stretch: normal;
+  --helix-core-type-preset-8-caption-proper-case-font-style-old: Bold;
+  --helix-core-type-preset-8-caption-proper-case-letter-spacing: 0.5px;
+  --helix-core-type-preset-8-caption-proper-case-line-height: 16px;
+  --helix-core-type-preset-8-caption-proper-case-paragraph-indent: 0;
+  --helix-core-type-preset-8-caption-proper-case-paragraph-spacing: 0;
+  --helix-core-type-preset-8-caption-proper-case-text-case: none;
+  --helix-core-type-preset-11-isi-paragraph-text-font-size: 16px;
+  --helix-core-type-preset-11-isi-paragraph-text-text-decoration: none;
+  --helix-core-type-preset-11-isi-paragraph-text-font-family: Inter;
+  --helix-core-type-preset-11-isi-paragraph-text-font-weight: 400;
+  --helix-core-type-preset-11-isi-paragraph-text-font-style: normal;
+  --helix-core-type-preset-11-isi-paragraph-text-font-stretch: normal;
+  --helix-core-type-preset-11-isi-paragraph-text-font-style-old: Regular;
+  --helix-core-type-preset-11-isi-paragraph-text-letter-spacing: 0.25px;
+  --helix-core-type-preset-11-isi-paragraph-text-line-height: 24px;
+  --helix-core-type-preset-11-isi-paragraph-text-paragraph-indent: 0;
+  --helix-core-type-preset-11-isi-paragraph-text-paragraph-spacing: 16px;
+  --helix-core-type-preset-11-isi-paragraph-text-text-case: none;
+  --helix-core-type-preset-11-isi-blackbox-text-font-size: 16px;
+  --helix-core-type-preset-11-isi-blackbox-text-text-decoration: none;
+  --helix-core-type-preset-11-isi-blackbox-text-font-family: Inter;
+  --helix-core-type-preset-11-isi-blackbox-text-font-weight: 600;
+  --helix-core-type-preset-11-isi-blackbox-text-font-style: normal;
+  --helix-core-type-preset-11-isi-blackbox-text-font-stretch: normal;
+  --helix-core-type-preset-11-isi-blackbox-text-font-style-old: Semi Bold;
+  --helix-core-type-preset-11-isi-blackbox-text-letter-spacing: 0.25px;
+  --helix-core-type-preset-11-isi-blackbox-text-line-height: 24px;
+  --helix-core-type-preset-11-isi-blackbox-text-paragraph-indent: 0;
+  --helix-core-type-preset-11-isi-blackbox-text-paragraph-spacing: 16px;
+  --helix-core-type-preset-11-isi-blackbox-text-text-case: none;
+  --helix-core-type-preset-12-reference-title-text-font-size: 12px;
+  --helix-core-type-preset-12-reference-title-text-text-decoration: none;
+  --helix-core-type-preset-12-reference-title-text-font-family: Inter;
+  --helix-core-type-preset-12-reference-title-text-font-weight: 600;
+  --helix-core-type-preset-12-reference-title-text-font-style: normal;
+  --helix-core-type-preset-12-reference-title-text-font-stretch: normal;
+  --helix-core-type-preset-12-reference-title-text-font-style-old: Semi Bold;
+  --helix-core-type-preset-12-reference-title-text-letter-spacing: 0.5px;
+  --helix-core-type-preset-12-reference-title-text-line-height: 16px;
+  --helix-core-type-preset-12-reference-title-text-paragraph-indent: 0;
+  --helix-core-type-preset-12-reference-title-text-paragraph-spacing: 0;
+  --helix-core-type-preset-12-reference-title-text-text-case: none;
+  --helix-core-type-preset-12-reference-body-text-font-size: 12px;
+  --helix-core-type-preset-12-reference-body-text-text-decoration: none;
+  --helix-core-type-preset-12-reference-body-text-font-family: Inter;
+  --helix-core-type-preset-12-reference-body-text-font-weight: 400;
+  --helix-core-type-preset-12-reference-body-text-font-style: normal;
+  --helix-core-type-preset-12-reference-body-text-font-stretch: normal;
+  --helix-core-type-preset-12-reference-body-text-font-style-old: Regular;
+  --helix-core-type-preset-12-reference-body-text-letter-spacing: 0.5px;
+  --helix-core-type-preset-12-reference-body-text-line-height: 16px;
+  --helix-core-type-preset-12-reference-body-text-paragraph-indent: 0;
+  --helix-core-type-preset-12-reference-body-text-paragraph-spacing: 0;
+  --helix-core-type-preset-12-reference-body-text-text-case: none;
+  --helix-core-type-preset-12-reference-numbered-list-font-size: 12px;
+  --helix-core-type-preset-12-reference-numbered-list-text-decoration: none;
+  --helix-core-type-preset-12-reference-numbered-list-font-family: Inter;
+  --helix-core-type-preset-12-reference-numbered-list-font-weight: 400;
+  --helix-core-type-preset-12-reference-numbered-list-font-style: normal;
+  --helix-core-type-preset-12-reference-numbered-list-font-stretch: normal;
+  --helix-core-type-preset-12-reference-numbered-list-font-style-old: Regular;
+  --helix-core-type-preset-12-reference-numbered-list-letter-spacing: 0.5px;
+  --helix-core-type-preset-12-reference-numbered-list-line-height: 16px;
+  --helix-core-type-preset-12-reference-numbered-list-paragraph-indent: 0;
+  --helix-core-type-preset-12-reference-numbered-list-paragraph-spacing: 0;
+  --helix-core-type-preset-12-reference-numbered-list-text-case: none;
+  --helix-core-type-preset-12-reference-italics-font-size: 12px;
+  --helix-core-type-preset-12-reference-italics-text-decoration: none;
+  --helix-core-type-preset-12-reference-italics-font-family: Inter;
+  --helix-core-type-preset-12-reference-italics-font-weight: 400;
+  --helix-core-type-preset-12-reference-italics-font-style: italic;
+  --helix-core-type-preset-12-reference-italics-font-stretch: normal;
+  --helix-core-type-preset-12-reference-italics-font-style-old: Italic;
+  --helix-core-type-preset-12-reference-italics-letter-spacing: 0.5px;
+  --helix-core-type-preset-12-reference-italics-line-height: 16px;
+  --helix-core-type-preset-12-reference-italics-paragraph-indent: 0;
+  --helix-core-type-preset-12-reference-italics-paragraph-spacing: 0;
+  --helix-core-type-preset-12-reference-italics-text-case: none;
+  --helix-core-type-preset-12-reference-bullet-list-font-size: 12px;
+  --helix-core-type-preset-12-reference-bullet-list-text-decoration: none;
+  --helix-core-type-preset-12-reference-bullet-list-font-family: Inter;
+  --helix-core-type-preset-12-reference-bullet-list-font-weight: 400;
+  --helix-core-type-preset-12-reference-bullet-list-font-style: normal;
+  --helix-core-type-preset-12-reference-bullet-list-font-stretch: normal;
+  --helix-core-type-preset-12-reference-bullet-list-font-style-old: Regular;
+  --helix-core-type-preset-12-reference-bullet-list-letter-spacing: 0.5px;
+  --helix-core-type-preset-12-reference-bullet-list-line-height: 16px;
+  --helix-core-type-preset-12-reference-bullet-list-paragraph-indent: 0;
+  --helix-core-type-preset-12-reference-bullet-list-paragraph-spacing: 0;
+  --helix-core-type-preset-12-reference-bullet-list-text-case: none;
+  --helix-core-preset-13-small-disclaimer-link-font-size: 12px;
+  --helix-core-preset-13-small-disclaimer-link-text-decoration: underline;
+  --helix-core-preset-13-small-disclaimer-link-font-family: Inter;
+  --helix-core-preset-13-small-disclaimer-link-font-weight: 700;
+  --helix-core-preset-13-small-disclaimer-link-font-style: normal;
+  --helix-core-preset-13-small-disclaimer-link-font-stretch: normal;
+  --helix-core-preset-13-small-disclaimer-link-font-style-old: Bold;
+  --helix-core-preset-13-small-disclaimer-link-letter-spacing: 0.5px;
+  --helix-core-preset-13-small-disclaimer-link-line-height: 20px;
+  --helix-core-preset-13-small-disclaimer-link-paragraph-indent: 0;
+  --helix-core-preset-13-small-disclaimer-link-paragraph-spacing: 0;
+  --helix-core-preset-13-small-disclaimer-link-text-case: none;
+  --helix-core-preset-13-extra-small-disclaimer-link-font-size: 10px;
+  --helix-core-preset-13-extra-small-disclaimer-link-text-decoration: underline;
+  --helix-core-preset-13-extra-small-disclaimer-link-font-family: Inter;
+  --helix-core-preset-13-extra-small-disclaimer-link-font-weight: 700;
+  --helix-core-preset-13-extra-small-disclaimer-link-font-style: normal;
+  --helix-core-preset-13-extra-small-disclaimer-link-font-stretch: normal;
+  --helix-core-preset-13-extra-small-disclaimer-link-font-style-old: Bold;
+  --helix-core-preset-13-extra-small-disclaimer-link-letter-spacing: 0.2px;
+  --helix-core-preset-13-extra-small-disclaimer-link-line-height: 15px;
+  --helix-core-preset-13-extra-small-disclaimer-link-paragraph-indent: 0;
+  --helix-core-preset-13-extra-small-disclaimer-link-paragraph-spacing: 0;
+  --helix-core-preset-13-extra-small-disclaimer-link-text-case: none;
+  --helix-core-preset-13-disclaimer-text-xl-font-size: 16px;
+  --helix-core-preset-13-disclaimer-text-xl-text-decoration: none;
+  --helix-core-preset-13-disclaimer-text-xl-font-family: Inter;
+  --helix-core-preset-13-disclaimer-text-xl-font-weight: 400;
+  --helix-core-preset-13-disclaimer-text-xl-font-style: normal;
+  --helix-core-preset-13-disclaimer-text-xl-font-stretch: normal;
+  --helix-core-preset-13-disclaimer-text-xl-font-style-old: Regular;
+  --helix-core-preset-13-disclaimer-text-xl-letter-spacing: 0.25px;
+  --helix-core-preset-13-disclaimer-text-xl-line-height: 24px;
+  --helix-core-preset-13-disclaimer-text-xl-paragraph-indent: 0;
+  --helix-core-preset-13-disclaimer-text-xl-paragraph-spacing: 0;
+  --helix-core-preset-13-disclaimer-text-xl-text-case: none;
+  --helix-core-preset-13-disclaimer-text-m-font-size: 12px;
+  --helix-core-preset-13-disclaimer-text-m-text-decoration: none;
+  --helix-core-preset-13-disclaimer-text-m-font-family: Inter;
+  --helix-core-preset-13-disclaimer-text-m-font-weight: 400;
+  --helix-core-preset-13-disclaimer-text-m-font-style: normal;
+  --helix-core-preset-13-disclaimer-text-m-font-stretch: normal;
+  --helix-core-preset-13-disclaimer-text-m-font-style-old: Regular;
+  --helix-core-preset-13-disclaimer-text-m-letter-spacing: 0.25px;
+  --helix-core-preset-13-disclaimer-text-m-line-height: 16px;
+  --helix-core-preset-13-disclaimer-text-m-paragraph-indent: 0;
+  --helix-core-preset-13-disclaimer-text-m-paragraph-spacing: 0;
+  --helix-core-preset-13-disclaimer-text-m-text-case: none;
+  --helix-core-preset-13-disclaimer-text-xs-font-size: 10px;
+  --helix-core-preset-13-disclaimer-text-xs-text-decoration: none;
+  --helix-core-preset-13-disclaimer-text-xs-font-family: Inter;
+  --helix-core-preset-13-disclaimer-text-xs-font-weight: 400;
+  --helix-core-preset-13-disclaimer-text-xs-font-style: normal;
+  --helix-core-preset-13-disclaimer-text-xs-font-stretch: normal;
+  --helix-core-preset-13-disclaimer-text-xs-font-style-old: Regular;
+  --helix-core-preset-13-disclaimer-text-xs-letter-spacing: 0.25px;
+  --helix-core-preset-13-disclaimer-text-xs-line-height: 13px;
+  --helix-core-preset-13-disclaimer-text-xs-paragraph-indent: 0;
+  --helix-core-preset-13-disclaimer-text-xs-paragraph-spacing: 0;
+  --helix-core-preset-13-disclaimer-text-xs-text-case: none;
+  --helix-core-preset-13-disclaimer-text-medical-xl-font-size: 16px;
+  --helix-core-preset-13-disclaimer-text-medical-xl-text-decoration: none;
+  --helix-core-preset-13-disclaimer-text-medical-xl-font-family: Inter;
+  --helix-core-preset-13-disclaimer-text-medical-xl-font-weight: 400;
+  --helix-core-preset-13-disclaimer-text-medical-xl-font-style: normal;
+  --helix-core-preset-13-disclaimer-text-medical-xl-font-stretch: normal;
+  --helix-core-preset-13-disclaimer-text-medical-xl-font-style-old: Regular;
+  --helix-core-preset-13-disclaimer-text-medical-xl-letter-spacing: 0.25px;
+  --helix-core-preset-13-disclaimer-text-medical-xl-line-height: 24px;
+  --helix-core-preset-13-disclaimer-text-medical-xl-paragraph-indent: 0;
+  --helix-core-preset-13-disclaimer-text-medical-xl-paragraph-spacing: 0;
+  --helix-core-preset-13-disclaimer-text-medical-xl-text-case: none;
+  --helix-core-preset-13-disclaimer-text-medical-m-font-size: 12px;
+  --helix-core-preset-13-disclaimer-text-medical-m-text-decoration: none;
+  --helix-core-preset-13-disclaimer-text-medical-m-font-family: Inter;
+  --helix-core-preset-13-disclaimer-text-medical-m-font-weight: 400;
+  --helix-core-preset-13-disclaimer-text-medical-m-font-style: normal;
+  --helix-core-preset-13-disclaimer-text-medical-m-font-stretch: normal;
+  --helix-core-preset-13-disclaimer-text-medical-m-font-style-old: Regular;
+  --helix-core-preset-13-disclaimer-text-medical-m-letter-spacing: 0.25px;
+  --helix-core-preset-13-disclaimer-text-medical-m-line-height: 16px;
+  --helix-core-preset-13-disclaimer-text-medical-m-paragraph-indent: 0;
+  --helix-core-preset-13-disclaimer-text-medical-m-paragraph-spacing: 0;
+  --helix-core-preset-13-disclaimer-text-medical-m-text-case: none;
+  --helix-core-preset-13-disclaimer-text-medical-xs-font-size: 10px;
+  --helix-core-preset-13-disclaimer-text-medical-xs-text-decoration: none;
+  --helix-core-preset-13-disclaimer-text-medical-xs-font-family: Inter;
+  --helix-core-preset-13-disclaimer-text-medical-xs-font-weight: 400;
+  --helix-core-preset-13-disclaimer-text-medical-xs-font-style: normal;
+  --helix-core-preset-13-disclaimer-text-medical-xs-font-stretch: normal;
+  --helix-core-preset-13-disclaimer-text-medical-xs-font-style-old: Regular;
+  --helix-core-preset-13-disclaimer-text-medical-xs-letter-spacing: 0.25px;
+  --helix-core-preset-13-disclaimer-text-medical-xs-line-height: 13px;
+  --helix-core-preset-13-disclaimer-text-medical-xs-paragraph-indent: 0;
+  --helix-core-preset-13-disclaimer-text-medical-xs-paragraph-spacing: 0;
+  --helix-core-preset-13-disclaimer-text-medical-xs-text-case: none;
+  --helix-core-superscript-xl-h1-xl-superscript-font-size: 72px;
+  --helix-core-superscript-xl-h1-xl-superscript-text-decoration: none;
+  --helix-core-superscript-xl-h1-xl-superscript-font-family: Superscript;
+  --helix-core-superscript-xl-h1-xl-superscript-font-weight: 400;
+  --helix-core-superscript-xl-h1-xl-superscript-font-style: normal;
+  --helix-core-superscript-xl-h1-xl-superscript-font-stretch: normal;
+  --helix-core-superscript-xl-h1-xl-superscript-font-style-old: Regular;
+  --helix-core-superscript-xl-h1-xl-superscript-letter-spacing: -2px;
+  --helix-core-superscript-xl-h1-xl-superscript-line-height: 80px;
+  --helix-core-superscript-xl-h1-xl-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xl-h1-xl-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xl-h1-xl-superscript-text-case: none;
+  --helix-core-superscript-xl-h2-xl-superscript-font-size: 48px;
+  --helix-core-superscript-xl-h2-xl-superscript-text-decoration: none;
+  --helix-core-superscript-xl-h2-xl-superscript-font-family: Superscript;
+  --helix-core-superscript-xl-h2-xl-superscript-font-weight: 400;
+  --helix-core-superscript-xl-h2-xl-superscript-font-style: normal;
+  --helix-core-superscript-xl-h2-xl-superscript-font-stretch: normal;
+  --helix-core-superscript-xl-h2-xl-superscript-font-style-old: Regular;
+  --helix-core-superscript-xl-h2-xl-superscript-letter-spacing: -1px;
+  --helix-core-superscript-xl-h2-xl-superscript-line-height: 56px;
+  --helix-core-superscript-xl-h2-xl-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xl-h2-xl-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xl-h2-xl-superscript-text-case: none;
+  --helix-core-superscript-xl-h3-xl-superscript-font-size: 32px;
+  --helix-core-superscript-xl-h3-xl-superscript-text-decoration: none;
+  --helix-core-superscript-xl-h3-xl-superscript-font-family: Superscript;
+  --helix-core-superscript-xl-h3-xl-superscript-font-weight: 400;
+  --helix-core-superscript-xl-h3-xl-superscript-font-style: normal;
+  --helix-core-superscript-xl-h3-xl-superscript-font-stretch: normal;
+  --helix-core-superscript-xl-h3-xl-superscript-font-style-old: Regular;
+  --helix-core-superscript-xl-h3-xl-superscript-letter-spacing: 0.25px;
+  --helix-core-superscript-xl-h3-xl-superscript-line-height: 40px;
+  --helix-core-superscript-xl-h3-xl-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xl-h3-xl-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xl-h3-xl-superscript-text-case: none;
+  --helix-core-superscript-xl-h4-xl-superscript-font-size: 24px;
+  --helix-core-superscript-xl-h4-xl-superscript-text-decoration: none;
+  --helix-core-superscript-xl-h4-xl-superscript-font-family: Superscript;
+  --helix-core-superscript-xl-h4-xl-superscript-font-weight: 400;
+  --helix-core-superscript-xl-h4-xl-superscript-font-style: normal;
+  --helix-core-superscript-xl-h4-xl-superscript-font-stretch: normal;
+  --helix-core-superscript-xl-h4-xl-superscript-font-style-old: Regular;
+  --helix-core-superscript-xl-h4-xl-superscript-letter-spacing: 0.25px;
+  --helix-core-superscript-xl-h4-xl-superscript-line-height: 32px;
+  --helix-core-superscript-xl-h4-xl-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xl-h4-xl-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xl-h4-xl-superscript-text-case: none;
+  --helix-core-superscript-xs-h1-xs-superscript-font-size: 40px;
+  --helix-core-superscript-xs-h1-xs-superscript-text-decoration: none;
+  --helix-core-superscript-xs-h1-xs-superscript-font-family: Superscript;
+  --helix-core-superscript-xs-h1-xs-superscript-font-weight: 400;
+  --helix-core-superscript-xs-h1-xs-superscript-font-style: normal;
+  --helix-core-superscript-xs-h1-xs-superscript-font-stretch: normal;
+  --helix-core-superscript-xs-h1-xs-superscript-font-style-old: Regular;
+  --helix-core-superscript-xs-h1-xs-superscript-letter-spacing: 0;
+  --helix-core-superscript-xs-h1-xs-superscript-line-height: 48px;
+  --helix-core-superscript-xs-h1-xs-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xs-h1-xs-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xs-h1-xs-superscript-text-case: none;
+  --helix-core-superscript-xs-h2-xs-superscript-font-size: 32px;
+  --helix-core-superscript-xs-h2-xs-superscript-text-decoration: none;
+  --helix-core-superscript-xs-h2-xs-superscript-font-family: Superscript;
+  --helix-core-superscript-xs-h2-xs-superscript-font-weight: 400;
+  --helix-core-superscript-xs-h2-xs-superscript-font-style: normal;
+  --helix-core-superscript-xs-h2-xs-superscript-font-stretch: normal;
+  --helix-core-superscript-xs-h2-xs-superscript-font-style-old: Regular;
+  --helix-core-superscript-xs-h2-xs-superscript-letter-spacing: -0.67px;
+  --helix-core-superscript-xs-h2-xs-superscript-line-height: 40px;
+  --helix-core-superscript-xs-h2-xs-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xs-h2-xs-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xs-h2-xs-superscript-text-case: none;
+  --helix-core-superscript-xs-h3-xs-superscript-font-size: 24px;
+  --helix-core-superscript-xs-h3-xs-superscript-text-decoration: none;
+  --helix-core-superscript-xs-h3-xs-superscript-font-family: Superscript;
+  --helix-core-superscript-xs-h3-xs-superscript-font-weight: 400;
+  --helix-core-superscript-xs-h3-xs-superscript-font-style: normal;
+  --helix-core-superscript-xs-h3-xs-superscript-font-stretch: normal;
+  --helix-core-superscript-xs-h3-xs-superscript-font-style-old: Regular;
+  --helix-core-superscript-xs-h3-xs-superscript-letter-spacing: 0.21px;
+  --helix-core-superscript-xs-h3-xs-superscript-line-height: 28px;
+  --helix-core-superscript-xs-h3-xs-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xs-h3-xs-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xs-h3-xs-superscript-text-case: none;
+  --helix-core-superscript-xs-h4-xs-superscript-font-size: 20px;
+  --helix-core-superscript-xs-h4-xs-superscript-text-decoration: none;
+  --helix-core-superscript-xs-h4-xs-superscript-font-family: Superscript;
+  --helix-core-superscript-xs-h4-xs-superscript-font-weight: 400;
+  --helix-core-superscript-xs-h4-xs-superscript-font-style: normal;
+  --helix-core-superscript-xs-h4-xs-superscript-font-stretch: normal;
+  --helix-core-superscript-xs-h4-xs-superscript-font-style-old: Regular;
+  --helix-core-superscript-xs-h4-xs-superscript-letter-spacing: 0.21px;
+  --helix-core-superscript-xs-h4-xs-superscript-line-height: 28px;
+  --helix-core-superscript-xs-h4-xs-superscript-paragraph-indent: 0;
+  --helix-core-superscript-xs-h4-xs-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-xs-h4-xs-superscript-text-case: none;
+  --helix-core-superscript-h5-bold-superscript-font-size: 18px;
+  --helix-core-superscript-h5-bold-superscript-text-decoration: none;
+  --helix-core-superscript-h5-bold-superscript-font-family: Superscript;
+  --helix-core-superscript-h5-bold-superscript-font-weight: 700;
+  --helix-core-superscript-h5-bold-superscript-font-style: normal;
+  --helix-core-superscript-h5-bold-superscript-font-stretch: normal;
+  --helix-core-superscript-h5-bold-superscript-font-style-old: Bold;
+  --helix-core-superscript-h5-bold-superscript-letter-spacing: 0.25px;
+  --helix-core-superscript-h5-bold-superscript-line-height: 28px;
+  --helix-core-superscript-h5-bold-superscript-paragraph-indent: 0;
+  --helix-core-superscript-h5-bold-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-h5-bold-superscript-text-case: none;
+  --helix-core-superscript-h5-superscript-font-size: 18px;
+  --helix-core-superscript-h5-superscript-text-decoration: none;
+  --helix-core-superscript-h5-superscript-font-family: Superscript;
+  --helix-core-superscript-h5-superscript-font-weight: 400;
+  --helix-core-superscript-h5-superscript-font-style: normal;
+  --helix-core-superscript-h5-superscript-font-stretch: normal;
+  --helix-core-superscript-h5-superscript-font-style-old: Regular;
+  --helix-core-superscript-h5-superscript-letter-spacing: 0.25px;
+  --helix-core-superscript-h5-superscript-line-height: 28px;
+  --helix-core-superscript-h5-superscript-paragraph-indent: 0;
+  --helix-core-superscript-h5-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-h5-superscript-text-case: none;
+  --helix-core-superscript-paragraph-superscript-font-size: 16px;
+  --helix-core-superscript-paragraph-superscript-text-decoration: none;
+  --helix-core-superscript-paragraph-superscript-font-family: Superscript;
+  --helix-core-superscript-paragraph-superscript-font-weight: 400;
+  --helix-core-superscript-paragraph-superscript-font-style: normal;
+  --helix-core-superscript-paragraph-superscript-font-stretch: normal;
+  --helix-core-superscript-paragraph-superscript-font-style-old: Regular;
+  --helix-core-superscript-paragraph-superscript-letter-spacing: 0.25px;
+  --helix-core-superscript-paragraph-superscript-line-height: 24px;
+  --helix-core-superscript-paragraph-superscript-paragraph-indent: 0;
+  --helix-core-superscript-paragraph-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-paragraph-superscript-text-case: none;
+  --helix-core-superscript-subheading-superscript-font-size: 14px;
+  --helix-core-superscript-subheading-superscript-text-decoration: none;
+  --helix-core-superscript-subheading-superscript-font-family: Superscript;
+  --helix-core-superscript-subheading-superscript-font-weight: 400;
+  --helix-core-superscript-subheading-superscript-font-style: normal;
+  --helix-core-superscript-subheading-superscript-font-stretch: normal;
+  --helix-core-superscript-subheading-superscript-font-style-old: Regular;
+  --helix-core-superscript-subheading-superscript-letter-spacing: 0.5px;
+  --helix-core-superscript-subheading-superscript-line-height: 20px;
+  --helix-core-superscript-subheading-superscript-paragraph-indent: 0;
+  --helix-core-superscript-subheading-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-subheading-superscript-text-case: none;
+  --helix-core-superscript-reference-superscript-font-size: 12px;
+  --helix-core-superscript-reference-superscript-text-decoration: none;
+  --helix-core-superscript-reference-superscript-font-family: Superscript;
+  --helix-core-superscript-reference-superscript-font-weight: 400;
+  --helix-core-superscript-reference-superscript-font-style: normal;
+  --helix-core-superscript-reference-superscript-font-stretch: normal;
+  --helix-core-superscript-reference-superscript-font-style-old: Regular;
+  --helix-core-superscript-reference-superscript-letter-spacing: 0.5px;
+  --helix-core-superscript-reference-superscript-line-height: 16px;
+  --helix-core-superscript-reference-superscript-paragraph-indent: 0;
+  --helix-core-superscript-reference-superscript-paragraph-spacing: 0;
+  --helix-core-superscript-reference-superscript-text-case: none;
+  --helix-core-superscript-paragraph-bold-font-size: 16px;
+  --helix-core-superscript-paragraph-bold-text-decoration: none;
+  --helix-core-superscript-paragraph-bold-font-family: Superscript;
+  --helix-core-superscript-paragraph-bold-font-weight: 700;
+  --helix-core-superscript-paragraph-bold-font-style: normal;
+  --helix-core-superscript-paragraph-bold-font-stretch: normal;
+  --helix-core-superscript-paragraph-bold-font-style-old: Bold;
+  --helix-core-superscript-paragraph-bold-letter-spacing: 0.25px;
+  --helix-core-superscript-paragraph-bold-line-height: 24px;
+  --helix-core-superscript-paragraph-bold-paragraph-indent: 0;
+  --helix-core-superscript-paragraph-bold-paragraph-spacing: 0;
+  --helix-core-superscript-paragraph-bold-text-case: none;
+  --helix-core-superscript-reference-bold-font-size: 12px;
+  --helix-core-superscript-reference-bold-text-decoration: none;
+  --helix-core-superscript-reference-bold-font-family: Superscript;
+  --helix-core-superscript-reference-bold-font-weight: 700;
+  --helix-core-superscript-reference-bold-font-style: normal;
+  --helix-core-superscript-reference-bold-font-stretch: normal;
+  --helix-core-superscript-reference-bold-font-style-old: Bold;
+  --helix-core-superscript-reference-bold-letter-spacing: 0.5px;
+  --helix-core-superscript-reference-bold-line-height: 16px;
+  --helix-core-superscript-reference-bold-paragraph-indent: 0;
+  --helix-core-superscript-reference-bold-paragraph-spacing: 0;
+  --helix-core-superscript-reference-bold-text-case: none;
+  --helix-core-custom-f2f4f7: rgba(242, 244, 247, 1);
+  --helix-core-medical-neutrals-box-warning-black: rgba(0, 0, 0, 1);
+  --helix-core-medical-primary-primary: rgba(172, 91, 33, 1);
+  --helix-core-medical-primary-dark: rgba(132, 63, 13, 1);
+  --helix-core-medical-primary-mid: rgba(211, 128, 72, 1);
+  --helix-core-medical-primary-light-primary: rgba(211, 128, 72, 1);
+  --helix-core-medical-secondary-secondary: rgba(33, 85, 128, 1);
+  --helix-core-medical-secondary-secondary-light: rgba(56, 114, 154, 1);
+  --helix-core-medical-secondary-secondary-dark: rgba(6, 29, 55, 1);
+  --helix-core-medical-accent-1: rgba(223, 223, 248, 1);
+  --helix-core-medical-accent-2: rgba(246, 250, 255, 1);
+  --helix-core-medical-accent-3: rgba(86, 150, 187, 1);
+  --helix-core-medical-accent-4: rgba(126, 201, 233, 1);
+  /* // vars from pfizer code */
+
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
@@ -26,9 +839,10 @@
   --button-hover-color: var(--background-color);
 
   /* fonts */
-  --body-font-family: 'Inter', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: "Inter", helvetica, ubuntu, roboto, noto, sans-serif;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
+    monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -45,7 +859,14 @@
 
   /* nav height */
   --nav-height: 64px;
+}
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -66,24 +887,45 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
-p, dl, ol, ul, pre, blockquote {
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -98,13 +940,16 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
-  padding: .125em;
+code,
+samp {
+  padding: 0.125em;
 }
 
 pre {
@@ -113,7 +958,8 @@ pre {
 
 /* buttons */
 
-a.button:any-link, button {
+a.button:any-link,
+button {
   font-family: var(--body-font-family);
   font-size: 16px;
   display: inline-block;
@@ -122,34 +968,38 @@ a.button:any-link, button {
   border: 2px solid var(--button-color);
   padding: 10px 38px;
   text-align: center;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 700;
   cursor: pointer;
-  color: var( --button-color);
-  background-color: var( --button-background-color);
+  color: var(--button-color);
+  background-color: var(--button-background-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--button-hover-background-color);
   color: var(--button-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
+a.button.secondary,
+button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
-  color: var(--text-color)
-} 
-
+  color: var(--text-color);
+}
 
 main input {
   font-size: 1.25rem;
@@ -157,7 +1007,7 @@ main input {
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;    
+  padding: 0.75rem 0.6rem;
   border-radius: 0.25rem;
   box-sizing: border-box;
   border: 1px solid var(--text-color);
@@ -176,7 +1026,7 @@ main .section {
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
-  border-radius: .25em;
+  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
@@ -214,7 +1064,7 @@ main img {
 @media (min-width: 600px) {
   main .section {
     padding: 0;
-  }  
+  }
 }
 
 @media (min-width: 900px) {
@@ -224,9 +1074,9 @@ main img {
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
+    --heading-font-size-xs: 22px;
   }
-  
+
   .section > div {
     max-width: 1200px;
     margin: auto;
@@ -234,8 +1084,8 @@ main img {
 }
 
 /* progressive section appearance */
-main .section[data-section-status='loading'],
-main .section[data-section-status='initialized'] {
+main .section[data-section-status="loading"],
+main .section[data-section-status="initialized"] {
   display: none;
 }
 
