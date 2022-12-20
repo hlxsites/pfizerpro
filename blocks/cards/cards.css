@@ -16,23 +16,23 @@
 /* Card Items: where second card is lower than first, and third is lower than second */
 .cards > ul > li {
     overflow: hidden;
-    grid-row: 2 / span 4;
     display: block;
     position: relative;
     padding: 0 24px;
+    grid-row: 1 / span 4;
 }
 .cards > ul > li:first-of-type:before {
     background: #0096ff;;
 }
 
-.cards > ul > li:first-of-type {
-    grid-row: 1 / 4;
+.cards.descending > ul > li:nth-of-type(1) {
+    grid-row: 1 / span 4;
 }
-.cards > ul > li:nth-of-type(2) {
+.cards.descending > ul > li:nth-of-type(2) {
     grid-row: 2 / 5;
 }
 
-.cards > ul > li:last-of-type {
+.cards.descending > ul > li:nth-of-type(3) {
     grid-row: 3 / 6;
 }
 /* // Card Items */
@@ -46,15 +46,18 @@
     left: 0px;
     width: 4px;
     height: 100%;
+
+}
+.cards > ul > li:nth-of-type(1):before {
     background:#0097ff;
 }
 .cards > ul > li:nth-of-type(2):before {
     background: #0ebdba;
 }
-.cards > ul > li:last-of-type:before {
+.cards > ul > li:nth-of-type(3):before {
     background:#68bb6e;
 }
-/* // Card left rail */
+
 
 
 .cards .cards-card-body {
