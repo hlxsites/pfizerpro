@@ -824,6 +824,11 @@
   --helix-core-medical-accent-3: rgba(86, 150, 187, 1);
   --helix-core-medical-accent-4: rgba(126, 201, 233, 1);
   --helix-core-spacing-multiplier: 4px;
+  --helix-core-divider-size-small: 1px;
+  --helix-core-divider-size-medium: 2px;
+  --helix-core-divider-size-large: 4px;
+  --helix-core-divider-color: var(--helix-core-neutrals-neutral-light);
+
   /* // vars from pfizer code */
 
   /* colors */
@@ -867,7 +872,7 @@ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {

@@ -28,21 +28,83 @@
     --helix-core-card-accent-background: var(--subtheme-mid, var(--helix-core-accent-accent));
     --helix-core-card-accent-background-2: var(--subtheme-secondary-mid, var(--helix-core-accent-accent-2));
     --helix-core-card-accent-background-3: var(--subtheme-mid-10, var(--helix-core-accent-accent-3));
-    --helix-core-card-box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px 0;
+    --helix-core-card-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px 0;
     --helix-core-card-color: var(--helix-core-neutrals-black);
     --helix-core-card-kicker-multiple-padding-bottom-property: 8px;
     --helix-core-card-step-height: calc(var(--helix-core-spacing-multiplier) * 10);
+    --helix-card-item-default-padding: calc(var(--helix-core-spacing-multiplier) * 6);
 }
 
-.cards-container {
-    max-width: 75rem;
+.section.cards-container{
+    overflow: hidden;
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--helix-layout-container-padding-left-property, calc(var(--helix-core-spacing-multiplier) * 4));
     padding-right: var(--helix-layout-container-padding-right-property, calc(var(--helix-core-spacing-multiplier) * 4));
 }
 
+.section.cards-container .cards-wrapper {
+    max-width: 75rem;
+}
+
+.section.cards-container.background .default-content-wrapper picture {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    max-width: unset;
+}
+
+.section.cards-container.background::before {
+    content: unset;
+}
+
+@media (min-width: 768px){
+    .section.cards-container.background::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        bottom: -1px;
+        right: 0;
+        object-fit: cover;
+        box-sizing: border-box;
+        max-width: unset;
+        background-color: white;
+        clip-path: polygon( 100% 100%, 0% 85%, 0% 100%);
+    }
+}
+
+.section.cards-container.background .default-content-wrapper picture img {
+    height: 100%;
+    width: 100%;
+}
+
+.section.cards-container.background .cards {
+    margin-bottom: calc(40 * var(--helix-core-spacing-multiplier));
+}
+
+.section.cards-container.background .default-content-wrapper h2 {
+    color: var(--helix-core-neutrals-white) !important;
+    font-family: var(--helix-core-type-preset-1-1-xl-desktop-h1-font-family, inherit);
+    font-size: var(--helix-core-type-preset-1-1-xl-desktop-h1-font-size, inherit);
+    letter-spacing: var(--helix-core-type-preset-1-1-xl-desktop-h1-letter-spacing, inherit);
+    line-height: var(--helix-core-type-preset-1-1-xl-desktop-h1-line-height, inherit);
+    font-weight: var(--helix-core-type-preset-1-1-xl-desktop-h1-font-weight, inherit);
+}
+
+
 /* card item list */
+.cards.background > ul > li {
+    background: var(--helix-core-card-background, var(--helix-core-neutrals-white));
+    padding: calc(var(--helix-core-spacing-multiplier) * 6);
+}
+
 .cards > ul {
     list-style: none;
     margin: 0;
@@ -54,23 +116,42 @@
     row-gap: var(--helix-core-card-column-gap, calc(var(--helix-core-spacing-multiplier) * 6));
 }
 
-.cards.no-gap > ul {
-    column-gap: normal;
-    row-gap: normal;
+.cards.primary > ul > li {
+    position: relative;
+    box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
+    border-radius: var(--helix-core-card-border-radius--override, var(--helix-core-card-border-radius));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: var(--helix-core-card-background, var(--helix-core-neutrals-white));
+    padding: var(--helix-card-item-default-padding)
+}
+
+.cards.primary  > ul > li:before {
+    content: unset;
 }
 
 /* card item */
 .cards > ul > li {
     overflow: hidden;
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    padding-left: var(--helix-core-card-body-padding-left-property, calc(var(--helix-core-spacing-multiplier) * 6));
-    padding-right: var(--helix-core-card-body-padding-right-property, calc(var(--helix-core-spacing-multiplier) * 6));
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: var(--helix-card-item-default-padding);
+    padding-left: var(--helix-card-item-default-padding);
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
 
-    .cards > ul, .cards.three > ul{
+    .cards.no-gap > ul {
+        column-gap: normal;
+        row-gap: normal;
+    }
+
+    /* Three in a row by default */
+    .cards > ul, .cards.three > ul {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -79,8 +160,8 @@
     }
 
     /* descending cards */
-    .cards.descending ul {
-        grid-template-rows: var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) 1fr var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12));
+    .cards.descending ul, .cards.ascending ul {
+        grid-template-rows: var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) auto var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12));
     }
 
     .cards.descending > ul > li:first-of-type {
@@ -96,6 +177,22 @@
     .cards.descending > ul > li:last-of-type {
         grid-row-start: 3;
         grid-row-end: 6;
+    }
+
+    .cards.ascending > ul > li:first-of-type {
+        grid-row-start: 3;
+        grid-row-end: 6;
+        
+    }
+
+    .cards.ascending > ul > li {
+        grid-row-start: 2;
+        grid-row-end: span 3;
+    }
+    
+    .cards.ascending > ul > li:last-of-type {
+        grid-row-start: 1;
+        grid-row-end: 4;
     }
     /* // descending cards */
 }
@@ -126,10 +223,10 @@
 
 /* card body */
 .cards .cards-card-body {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-grow: 1;
 }
 /* first child *should* be a header */
 .cards .cards-card-body > *:first-child {
@@ -140,8 +237,17 @@
     font-weight: 300;
     color: rgb(0,0,78);
 }
+
+.cards .cards-card-body  hr {
+    border: 0;
+    border-bottom: var(--helix-core-divider-size-small) var(--helix-core-divider-color) solid;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    width: 100%;
+}
+
 /* text content, that is not buttons */
-.cards .cards-card-body > p:not(.button-container){
+.cards .cards-card-body > p:not(.button-container) {
     font-family: var(--body-font-family);
     margin-top: 0;
     font-size: 16px;
@@ -154,6 +260,10 @@
     margin: 0;
     width: 100%;
 }
+.cards.primary .cards-card-body .button{
+    width: auto;
+}
+
 .cards .button-container {
     margin: 0;
     padding: 0;
