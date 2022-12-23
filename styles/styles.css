@@ -823,6 +823,7 @@
   --helix-core-medical-accent-2: rgba(246, 250, 255, 1);
   --helix-core-medical-accent-3: rgba(86, 150, 187, 1);
   --helix-core-medical-accent-4: rgba(126, 201, 233, 1);
+  --helix-core-spacing-multiplier: 4px;
   /* // vars from pfizer code */
 
   /* colors */
