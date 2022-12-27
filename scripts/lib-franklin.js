@@ -350,7 +350,7 @@ export async function loadBlock(block) {
     const blockName = block.getAttribute('data-block-name');
     try {
       const cssLoaded = new Promise((resolve) => {
-        if (blockName.startsWith("cards")) {
+        if (blockName.startsWith('cards')) {
           loadCSS(`${window.hlx.codeBasePath}/blocks/cards/cards.css`, resolve);
         }
         loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
