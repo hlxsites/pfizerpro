@@ -2,17 +2,17 @@
   --helix-core-logo-width: 82px;
   --helix-core-nav-left-padding: calc(var(--helix-core-spacing-multiplier) * 4);
 }
+
 /* header and nav layout */
 header nav {
   display: grid;
   grid-template:
     'brand tools hamburger' var(--nav-height)
-    'sections sections sections' 1fr / 1fr 50px calc(20px +  var(--helix-core-nav-left-padding));
+    'sections sections sections' 1fr / 1fr 50px calc(20px + var(--helix-core-nav-left-padding));
   align-items: center;
   padding: 0;
   position: initial;
   z-index: 1;
-  background-color: var(--background-color);
   width: 100vw;
   height: var(--nav-height);
   box-sizing: border-box;
@@ -31,7 +31,7 @@ header nav[aria-expanded='true'] {
   min-height: auto;
   height: auto;
   max-height: 100vh;
-  box-shadow: 0px 4px 10px 0px rgb(0 0 0 / 10%);
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 10%);
 }
 
 
@@ -130,9 +130,9 @@ header nav .nav-sections {
   display: none;
   background-color: var(--overlay-color);
   flex: 1 1 auto;
-  box-shadow: inset 0 6px 4px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 6px 4px -4px rgb(0 0 0 / 10%);
   padding-left: calc(var(--helix-core-spacing-multiplier) * 4);
-  color: rgb(56, 56, 56)
+  color: rgb(56 56 56)
 }
 
 header nav .nav-sections .icon-cart svg {
@@ -147,6 +147,11 @@ header nav .nav-sections ul  {
   padding-left: 0;
 } 
 
+header nav .nav-sections li {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 header nav .nav-sections > ul > li {
   border-bottom: 1px solid var(--helix-core-neutrals-neutral);
   padding-top: calc(var(--helix-core-spacing-multiplier) * 3);
@@ -154,9 +159,22 @@ header nav .nav-sections > ul > li {
   position: relative;
 }
 
+header nav[aria-expanded='true'] .nav-tools img {
+  display: unset;
+}
+
+header nav[aria-expanded='true'] .nav-tools ul {
+  font-size: unset;
+  flex-direction: column;
+}
+
+header nav[aria-expanded='true'] .nav-tools li {
+  padding: 0;
+}
+
 header nav .nav-sections > ul > li.nav-drop ul {
   display: none;
-  color: rgb(56, 56, 56);
+  color: rgb(56 56 56);
   padding-left: 1em;
 }
 
@@ -171,7 +189,7 @@ header nav .nav-sections > ul > li.nav-drop[aria-expanded='true'] {
 }
 
 
-header nav .nav-sections > ul > li.nav-drop:after {
+header nav .nav-sections > ul > li.nav-drop::after {
   content: "";
   position: absolute;
   right: 0;
@@ -180,22 +198,13 @@ header nav .nav-sections > ul > li.nav-drop:after {
   width: 48px;
   height: 48px;
   transform: scale(0.5);
-}
-
-header nav .nav-sections > ul > li.nav-drop:after {
   background: url('/icons/add.svg');
 }
 
-header nav .nav-sections > ul > li.nav-drop[aria-expanded='true']:after {
+header nav .nav-sections > ul > li.nav-drop[aria-expanded='true']::after {
   background: url('/icons/remove.svg');
 }
 
-
-
-header nav .nav-sections li {
-  font-size: 16px;
-  font-weight: 400;
-}
 
 header nav[aria-expanded='true'] .nav-sections {
   display: block;
@@ -220,28 +229,22 @@ header nav .nav-tools p {
   margin: 0;
 }
 
-header nav[aria-expanded='true'] .nav-tools img {
-  display: unset;
-}
 
-header nav[aria-expanded='true'] .nav-tools ul {
-  font-size: unset;
-  flex-direction: column;
-}
-
-header nav[aria-expanded='true'] .nav-tools li {
-  padding: 0;
-}
 
 /* desktop nav styles */
 @media (min-width: 1000px) {
   header nav {
     display: flex;
-
     justify-content: space-between;
     height: var(--nav-height);
     padding: 0 2rem;
   }
+
+
+  header nav .nav-hamburger {
+    display: none;
+  }
+
   header nav .nav-sections {
     box-shadow: none;
     display: flex;
@@ -253,35 +256,55 @@ header nav[aria-expanded='true'] .nav-tools li {
     display: none;
   }
 
-  header nav .nav-sections > ul  {
+  header nav .nav-sections ul {
+    display: flex;
+    flex-direction: row;
+    background-color: unset;
+    width: unset;
+    margin: 0;
     height: 100%;
+  }  
+
+  header nav .nav-brand {
+    flex: 0 0 80px;
+  }
+
+
+  header nav .nav-tools .icon-cart {
+    display: block;
   }
   
+  header nav[aria-expanded='true'] .nav-sections ol {
+    display: flex;
+    min-height: unset;
+  }
+
   header nav .nav-sections > ul > li {
     border: 0;
     display: flex;
     align-items: center;
     position: relative;
+    font-size: 16px;
+    margin: 0 20px;
+    cursor: pointer;
+    padding-top: 0;
   }
+
 
   header nav .nav-sections > ul > li.nav-drop {
     position: relative;
+    color: rgb(56 56 56);
   }
+  
 
-  header nav .nav-sections > ul > li.nav-drop:after  {
+  header nav .nav-sections > ul > li.nav-drop::after  {
     content: unset;
   }
 
-
-
-header nav .nav-sections > ul > li.nav-drop {
-  /* display: none; */
-  color: rgb(56, 56, 56);
-}
-
-header nav .nav-sections > ul > li.nav-drop ul {
-  /* display: block; */
-}
+  header nav .nav-sections > ul > li > ul > li {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
 
 
   header nav .nav-sections > ul > li:hover {
@@ -289,7 +312,7 @@ header nav .nav-sections > ul > li.nav-drop ul {
     font-weight: 700;
   }
 
-  header nav .nav-sections > ul > li:hover:after {
+  header nav .nav-sections > ul > li:hover::after {
     content: " ";
     background: none;
     border-bottom: 3px solid var(--helix-core-primary-primary);
@@ -300,57 +323,6 @@ header nav .nav-sections > ul > li.nav-drop ul {
     bottom: 13px;
     width: 100%;
     transform: scale(1);
-  }
-
-  
-
-  header nav .nav-sections > ul > li.nav-drop:hover > ul {
-    display: block;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    background-color: white;
-    min-width: 250px;
-    z-index: 1;
-    box-shadow: 1px 8px 12px -2px rgb(0 0 0 / 10%);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  header nav .nav-hamburger {
-    display: none;
-
-  }
-
-  header nav .nav-brand {
-    flex: 0 0 80px;
-  }
-
-
-  header nav .nav-tools .icon-cart {
-    display: block;
-  }
-
-
-  header nav .nav-sections ul {
-    display: flex;
-    flex-direction: row;
-    background-color: unset;
-    width: unset;
-    margin: 0;
-  }
-  
-  header nav[aria-expanded='true'] .nav-sections ol {
-    display: flex;
-    min-height: unset;
-  }
-
-  header nav .nav-sections > ul > li {
-    position: relative;
-    font-size: 16px;
-    margin: 0 20px;
-    cursor: pointer;
-    padding-top: 0;
   }
 
   header nav .nav-sections > ul > li > p {
@@ -368,12 +340,6 @@ header nav .nav-sections > ul > li.nav-drop ul {
     font-size: var(--body-font-size-m);
   }
 
-
-  header nav .nav-sections > ul > li > ul > li {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-
   header nav .nav-sections > ul > li[aria-expanded='true'] ul {
     display: block;
     position: absolute;
@@ -383,4 +349,18 @@ header nav .nav-sections > ul > li.nav-drop ul {
     padding: 16px;
     box-shadow: 0 0 5px var(text-color);
   }
+
+  header nav .nav-sections > ul > li.nav-drop:hover > ul {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    min-width: 250px;
+    z-index: 1;
+    box-shadow: 1px 8px 12px -2px rgb(0 0 0 / 10%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
 }
