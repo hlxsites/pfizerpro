@@ -1,6 +1,5 @@
 /* block specific CSS goes here */
 .hero-container {
-    display: flex;
     position:relative;
     justify-content: center;
     background-size: cover;
@@ -34,6 +33,7 @@
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
+
 .hero h1 {
     font-family: var(--helix-core-type-preset-1-5-xs-mobile-h1-font-family, inherit);
     font-size: var(--helix-core-type-preset-1-5-xs-mobile-h1-font-size, inherit);
@@ -69,6 +69,7 @@
         flex-direction: row-reverse;
         justify-content: space-around
     }
+
     .hero-container::before {
         clip-path: polygon(100% 0%, 100% 70%, 0% 100%, 0% 0%);
     }
