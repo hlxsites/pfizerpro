@@ -889,9 +889,6 @@ body.appear {
   display: unset;
 }
 
-header {
-  height: var(--nav-height);
-}
 
 h1,
 h2,

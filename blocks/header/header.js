@@ -40,7 +40,9 @@ export default async function decorate(block) {
     const navSections = [...nav.children][1];
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+        if (navSection.querySelector('ul')) {
+          navSection.classList.add('nav-drop');
+        }
         navSection.addEventListener('click', () => {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           collapseAllNavSections(navSections);
@@ -58,7 +60,8 @@ export default async function decorate(block) {
       document.body.style.overflowY = expanded ? '' : 'hidden';
       nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
-    nav.prepend(hamburger);
+
+    nav.append(hamburger);
     nav.setAttribute('aria-expanded', 'false');
     decorateIcons(nav);
     block.append(nav);
