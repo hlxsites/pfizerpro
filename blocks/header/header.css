@@ -256,7 +256,7 @@ header nav .nav-tools p {
     display: none;
   }
 
-  header nav .nav-sections ul {
+  header nav .nav-sections > ul {
     display: flex;
     flex-direction: row;
     background-color: unset;
