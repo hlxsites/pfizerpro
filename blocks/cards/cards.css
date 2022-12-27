@@ -306,30 +306,30 @@
     }
 
     .cards.descending > ul > li {
-        grid-row-start: 2 / span 3;
+        grid-row: 2 / span 3;
     }
 
     .cards.ascending > ul > li {
-        grid-row-start: 2 / span 3;
+        grid-row: 2 / span 3;
     }
     
 
     .cards.descending > ul > li:first-of-type {
-        grid-row-start: 1 / 4;
+        grid-row: 1 / 4;
     }
 
 
     .cards.descending > ul > li:last-of-type {
-        grid-row-start: 3 / 6;
+        grid-row: 3 / 6;
     }
 
     .cards.ascending > ul > li:first-of-type {
-        grid-row-start: 3 / 6;
+        grid-row: 3 / 6;
         
     }
     
     .cards.ascending > ul > li:last-of-type {
-        grid-row-start: 1 / 4;
+        grid-row: 1 / 4;
     }
 
     /* // descending cards */
