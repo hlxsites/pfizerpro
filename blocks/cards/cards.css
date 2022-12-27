@@ -42,8 +42,8 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--helix-layout-container-padding-left-property, calc(var(--helix-core-spacing-multiplier) * 4));
-    padding-right: var(--helix-layout-container-padding-right-property, calc(var(--helix-core-spacing-multiplier) * 4));
+    padding-left: calc(var(--helix-core-spacing-multiplier) * 4);
+    padding-right: calc(var(--helix-core-spacing-multiplier) * 4);
 }
 
 .section.cards-container .cards-wrapper,
@@ -121,7 +121,7 @@
 
 /* card item list */
 .cards-with-background > ul > li {
-    background: var(--helix-core-card-background, var(--helix-core-neutrals-white));
+    background: var(--helix-core-neutrals-white);
     padding: calc(var(--helix-core-spacing-multiplier) * 6);
 }
 
@@ -148,7 +148,7 @@
 }
 
 .cards.list  > ul > li .button-container .button svg {
-    fill: var(--helix-core-button--link-color, var(--helix-core-primary-primary));
+    fill: var(--helix-core-primary-primary)
 }
 
 .cards.list  > ul > li .button-container .button:hover,
@@ -169,8 +169,8 @@
     display: grid;
     margin-top: calc(10 * var(--helix-core-spacing-multiplier));
     margin-bottom: calc(12 * var(--helix-core-spacing-multiplier));
-    column-gap: var(--helix-core-card-column-gap, calc(var(--helix-core-spacing-multiplier) * 6));
-    row-gap: var(--helix-core-card-column-gap, calc(var(--helix-core-spacing-multiplier) * 6));
+    column-gap: calc(var(--helix-core-spacing-multiplier) * 6);
+    row-gap: calc(var(--helix-core-spacing-multiplier) * 6);
 }
 
 .cards.list > ul {
@@ -201,7 +201,7 @@
 .cards.primary > ul > li {
     position: relative;
     box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
-    border-radius: var(--helix-core-card-border-radius--override, var(--helix-core-card-border-radius));
+    border-radius: var(--helix-core-card-border-radius);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
