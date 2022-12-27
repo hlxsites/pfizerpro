@@ -151,7 +151,8 @@
     fill: var(--helix-core-button--link-color, var(--helix-core-primary-primary));
 }
 
-.cards.list  > ul > li .button-container .button:hover {
+.cards.list  > ul > li .button-container .button:hover,
+.cards.list  > ul > li .button-container .button:focus {
     background: none;
 }
 
