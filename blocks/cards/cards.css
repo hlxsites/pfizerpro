@@ -99,42 +99,6 @@
     padding: calc(var(--helix-core-spacing-multiplier) * 6);
 }
 
-.cards.list > ul > li .button-container {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    z-index: 1;
-    bottom: 0;
-    height: 100%;
-    display: flex;
-    align-self: flex-end;
-    width: 36px;
-}
-
-.cards.list > ul > li .button-container .button {
-    padding: 6px;
-    margin: 0;
-    border: 0;
-    width: 36px;
-    align-self: center;
-}
-
-.cards.list  > ul > li .button-container .button svg {
-    fill: var(--helix-core-primary-primary)
-}
-
-.cards.list  > ul > li .button-container .button:hover,
-.cards.list  > ul > li .button-container .button:focus {
-    background: none;
-}
-
-@media (min-width: 768px){
-    .cards-with-background-right > ul > li {
-        width: 60%;
-    }
-}
-
 .cards > ul {
     list-style: none;
     margin: 0;
@@ -146,48 +110,6 @@
     row-gap: calc(var(--helix-core-spacing-multiplier) * 6);
 }
 
-.cards.list > ul {
-    grid-template-columns: 1fr;
-}
-
-.cards.list > ul > li {
-    box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
-    background: white;
-    border-top-right-radius: var(--helix-core-card-border-radius, 0);
-    border-bottom-right-radius: var(--helix-core-card-border-radius, 0);
-}
-@media (min-width: 768px){
-    .cards-with-background-right > ul > li {
-        width: 60%;
-    }
-
-    .cards.list > ul > li {
-        padding-left: calc(var(--helix-core-spacing-multiplier) * 20);
-        padding-top: calc(var(--helix-core-spacing-multiplier) * 8);
-        padding-right: calc(var(--helix-core-spacing-multiplier) * 8);
-        padding-bottom: calc(var(--helix-core-spacing-multiplier) * 8);
-        box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
-        border-radius: var(--helix-core-card-border-radius);
-        background: white;
-    }
-}
-
-.cards.primary > ul > li {
-    position: relative;
-    box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
-    border-radius: var(--helix-core-card-border-radius);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background: var(--helix-core-card-background, var(--helix-core-neutrals-white));
-    padding: var(--helix-card-item-default-padding)
-}
-
-.cards.primary  > ul > li .cards-card-body::before {
-    content: unset;
-}
-
-/* card item */
 .cards > ul > li {
     overflow: hidden;
     display: flex;
@@ -196,71 +118,6 @@
     padding-top: 0;
     padding-bottom: 0;
     padding-right: var(--helix-card-item-default-padding);
-}
-
-@media (min-width: 768px) {
-    .cards.no-gap > ul {
-        column-gap: normal;
-        row-gap: normal;
-    }
-
-    /* Three in a row by default */
-    .cards > ul, .cards.three > ul {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .cards.vertical > ul {
-        grid-template-columns: unset;
-        width: calc(100% + 80px);
-    }
-
-    .cards.two > ul {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* descending cards */
-    .cards.descending ul, .cards.ascending ul {
-        grid-template-rows: var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) auto var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12));
-    }
-
-    .cards.descending > ul > li:first-of-type {
-        grid-row-start: 1;
-        grid-row-end: 4;
-    }
-
-    .cards.descending > ul > li {
-        grid-row-start: 2;
-        grid-row-end: span 3;
-    }
-    
-    .cards.descending > ul > li:last-of-type {
-        grid-row-start: 3;
-        grid-row-end: 6;
-    }
-
-    .cards.ascending > ul > li:first-of-type {
-        grid-row-start: 3;
-        grid-row-end: 6;
-        
-    }
-
-    .cards.ascending > ul > li {
-        grid-row-start: 2;
-        grid-row-end: span 3;
-    }
-    
-    .cards.ascending > ul > li:last-of-type {
-        grid-row-start: 1;
-        grid-row-end: 4;
-    }
-
-    /* // descending cards */
-}
-
-.cards > ul > li .cards-card-body {
-    position: relative;
-    padding-left: var(--helix-card-item-default-padding);
-    padding: auto;
 }
 
 
@@ -343,6 +200,143 @@
     width: 100%;
 }
 
-/* // ard body */
+
+.cards.list > ul > li .button-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 1;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-self: flex-end;
+    width: 36px;
+}
+
+.cards.list > ul > li .button-container .button {
+    padding: 6px;
+    margin: 0;
+    border: 0;
+    width: 36px;
+    align-self: center;
+}
+
+.cards.list  > ul > li .button-container .button svg {
+    fill: var(--helix-core-primary-primary)
+}
+
+.cards.list  > ul > li .button-container .button:hover,
+.cards.list  > ul > li .button-container .button:focus {
+    background: none;
+}
+
+@media (min-width: 768px){
+    .cards-with-background-right > ul > li {
+        width: 60%;
+    }
+}
+
+.cards.list > ul {
+    grid-template-columns: 1fr;
+}
+
+.cards.list > ul > li {
+    box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
+    background: white;
+    border-top-right-radius: var(--helix-core-card-border-radius, 0);
+    border-bottom-right-radius: var(--helix-core-card-border-radius, 0);
+}
+@media (min-width: 768px){
+    .cards-with-background-right > ul > li {
+        width: 60%;
+    }
+
+    .cards.list > ul > li {
+        padding: calc(var(--helix-core-spacing-multiplier) * 8);
+        padding-left: calc(var(--helix-core-spacing-multiplier) * 20);
+        box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
+        border-radius: var(--helix-core-card-border-radius);
+        background: white;
+    }
+}
+
+.cards.primary > ul > li {
+    position: relative;
+    box-shadow: var(--helix-core-card-box-shadow, var(--helix-core-card-background-drop-shadow));
+    border-radius: var(--helix-core-card-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: var(--helix-core-card-background, var(--helix-core-neutrals-white));
+    padding: var(--helix-card-item-default-padding)
+}
+
+.cards.primary  > ul > li .cards-card-body::before {
+    content: unset;
+}
 
 
+
+
+@media (min-width: 768px) {
+    /* Three in a row by default */
+    .cards > ul, .cards.three > ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .cards.no-gap > ul {
+        column-gap: normal;
+        row-gap: normal;
+    }
+
+    .cards.vertical > ul {
+        grid-template-columns: unset;
+        width: calc(100% + 80px);
+    }
+
+    .cards.two > ul {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+
+    /* descending cards */
+    .cards.descending ul, .cards.ascending ul {
+        grid-template-rows: var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) auto var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12)) var(--helix-core-card-step-height, calc(var(--helix-core-spacing-multiplier) * 12));
+    }
+
+    .cards.descending > ul > li {
+        grid-row-start: 2 / span 3;
+    }
+
+    .cards.ascending > ul > li {
+        grid-row-start: 2 / span 3;
+    }
+    
+
+    .cards.descending > ul > li:first-of-type {
+        grid-row-start: 1 / 4;
+    }
+
+
+    .cards.descending > ul > li:last-of-type {
+        grid-row-start: 3 / 6;
+    }
+
+    .cards.ascending > ul > li:first-of-type {
+        grid-row-start: 3 / 6;
+        
+    }
+    
+    .cards.ascending > ul > li:last-of-type {
+        grid-row-start: 1 / 4;
+    }
+
+    /* // descending cards */
+}
+
+.cards > ul > li .cards-card-body {
+    position: relative;
+    padding: auto;
+    padding-left: var(--helix-card-item-default-padding);
+}
