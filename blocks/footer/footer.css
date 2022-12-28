@@ -1,7 +1,9 @@
 footer {
   padding: 2rem;
-  background-color: var(--overlay-background-color);
+  background-color: var(--helix-core-primary-dark-primary);
+  color: white;
   font-size: var(--body-font-size-s);
+  padding: 70px 0px;
 }
 
 footer .footer {
@@ -11,4 +13,41 @@ footer .footer {
 
 footer .footer p {
   margin: 0;
+}
+
+footer .footer a:any-link {
+  color: white;
+  text-decoration: underline;
+}
+
+footer .footer .columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer  .columns > div > div:nth-of-type(1)  p{
+  font-weight: 700;
+  margin: 8px 0 24px 0;
+}
+
+
+
+@media (min-width: 900px) {
+  footer .footer  .columns > div {
+      display: flex;
+      flex-direction: unset;
+  }
+
+  footer .footer  .columns > div > div {
+      flex: 1;
+      padding-left: 32px;
+  }
+
+  footer .footer  .columns > div > div:nth-of-type(2) {
+    border-left: solid 1px white;
+  }
+
+  footer .footer  .columns > div > div:first-of-type {
+      margin-left: unset;
+  }
 }
