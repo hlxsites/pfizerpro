@@ -114,7 +114,7 @@
     row-gap: calc(var(--helix-core-spacing-multiplier) * 6);
 }
 
-.cards > ul > li {
+.cards > ul > li, .cards > ul > li .cards-card-wrapper {
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -122,11 +122,12 @@
     padding-top: 0;
     padding-bottom: 0;
     padding-right: var(--helix-card-item-default-padding);
+    flex-grow: 1;
 }
 
 
 /* left colored rail (default) */
-.cards > ul > li .cards-card-body::before {
+.cards > ul > li .cards-card-wrapper::before {
     content: "";
     display: block;
     position: absolute;
@@ -134,18 +135,17 @@
     left: 0;
     width: 4px;
     height: 100%;
-
 }
 
-.cards > ul > li:nth-of-type(3n-2) .cards-card-body::before {
+.cards > ul > li:nth-of-type(3n-2) .cards-card-wrapper::before {
     background:#0097ff;
 }
 
-.cards > ul > li:nth-of-type(3n-1) .cards-card-body::before  {
+.cards > ul > li:nth-of-type(3n-1) .cards-card-wrapper::before  {
     background: #0ebdba;
 }
 
-.cards > ul > li:nth-of-type(3n) .cards-card-body::before  {
+.cards > ul > li:nth-of-type(3n) .cards-card-wrapper::before  {
     background:#68bb6e;
 }
 
@@ -276,11 +276,9 @@
     padding: var(--helix-card-item-default-padding)
 }
 
-.cards.primary  > ul > li .cards-card-body::before {
+.cards.primary  > ul > li .cards-card-wrapper::before {
     content: unset;
 }
-
-
 
 
 @media (min-width: 768px) {
@@ -339,7 +337,7 @@
     /* // descending cards */
 }
 
-.cards > ul > li .cards-card-body {
+.cards > ul > li .cards-card-wrapper {
     position: relative;
     padding: auto;
     padding-left: var(--helix-card-item-default-padding);
