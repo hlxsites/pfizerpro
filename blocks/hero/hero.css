@@ -5,6 +5,7 @@
     background-size: cover;
     display: flex;
     max-width: unset;
+    margin: 0;
 }
 
 .hero-container::before {
