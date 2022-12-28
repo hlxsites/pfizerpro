@@ -2,7 +2,7 @@ footer {
   background-color: var(--helix-core-primary-dark-primary);
   color: white;
   font-size: var(--body-font-size-s);
-  padding: 70px 0px;
+  padding: 70px 0;
 }
 
 footer .footer {
