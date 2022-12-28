@@ -358,7 +358,8 @@ export async function loadBlock(block) {
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
-            const mod = await import(`../blocks/${blockName}/${blockName}.js`);
+            const jsPath = blockName.startsWith('cards') ? '../blocks/cards/cards.js' : `../blocks/${blockName}/${blockName}.js`;
+            const mod = await import(jsPath);
             if (mod.default) {
               await mod.default(block);
             }
