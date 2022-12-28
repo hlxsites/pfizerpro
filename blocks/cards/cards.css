@@ -344,3 +344,9 @@
     padding: auto;
     padding-left: var(--helix-card-item-default-padding);
 }
+
+.cards.primary > ul > li .cards-card-body {
+    position: relative;
+    padding: auto;
+    padding-left: 0;
+}
