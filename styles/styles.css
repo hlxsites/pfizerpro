@@ -828,6 +828,7 @@
   --helix-core-divider-size-medium: 2px;
   --helix-core-divider-size-large: 4px;
   --helix-core-divider-color: var(--helix-core-neutrals-neutral-light);
+  --helix-core-section-padding: calc(var(--helix-core-spacing-multiplier) * 4);
 
   /* // vars from pfizer code */
 
@@ -1028,8 +1029,26 @@ main input:hover {
 }
 
 main .section {
-  padding: 0;
+  padding: var(--helix-core-section-padding);
+  margin: 1em auto;
+  max-width: 75rem;
 }
+
+main .section.well {
+  max-width: unset;
+  background-color: rgb(242 244 247 / 100%);
+}
+
+main .section.center {
+  text-align: center;
+}
+
+main .section.disclaimer {
+  font-size: 16px;
+  font-weight: 400px;
+  color: var(--helix-core-neutrals-neutral);
+}
+
 
 main pre {
   background-color: var(--overlay-background-color);
@@ -1069,11 +1088,6 @@ main img {
   height: auto;
 }
 
-@media (min-width: 600px) {
-  main .section {
-    padding: 0;
-  }
-}
 
 @media (min-width: 900px) {
   :root {
