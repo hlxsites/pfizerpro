@@ -865,6 +865,10 @@
 
   /* nav height */
   --nav-height: 64px;
+  --nav-height-lg: 96px;
+
+  /* desktop max width */
+  --max-width-lg: 1200px;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1031,7 +1035,7 @@ main input:hover {
 main .section {
   padding: var(--helix-core-section-padding);
   margin: 1em auto;
-  max-width: 75rem;
+  max-width: var(--max-width-lg);
 }
 
 main .section.well {
@@ -1100,7 +1104,7 @@ main img {
   }
 
   .section > div {
-    max-width: 1200px;
+    max-width: var(--max-width-lg);
     margin: auto;
   }
 }
