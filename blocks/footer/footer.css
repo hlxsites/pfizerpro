@@ -23,6 +23,7 @@ footer .footer .columns > div {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: var(--helix-core-section-padding);
 }
 
 footer .footer  .columns > div > div {
@@ -48,14 +49,14 @@ footer .footer  .columns > div > div:nth-of-type(1)  p{
       text-align: left;
   }
 
-  footer .footer  .columns > div > div {
+  footer .footer .columns > div > div {
       flex: 1;
-      padding-left: 32px;
   }
 
-  footer .footer  .columns > div > div:nth-of-type(2) {
+  footer .footer .columns > div > div:nth-of-type(2) {
     border: 0;
     border-left: solid 1px white;
+    padding-left: 32px;
   }
 
   footer .footer  .columns > div > div:first-of-type {
