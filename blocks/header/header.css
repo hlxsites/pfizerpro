@@ -1,5 +1,5 @@
 :root {
-  --helix-core-logo-width: 82px;
+  --helix-core-logo-width: 68px;
   --helix-core-nav-left-padding: calc(var(--helix-core-spacing-multiplier) * 4);
 }
 
@@ -18,8 +18,8 @@ header nav {
   box-sizing: border-box;
   font-family: var(--body-font-family);
   background: var(--helix-core-neutrals-white);
-  max-width: 75rem;
   margin: 0 auto;
+
 }
 
 header nav a:any-link {
@@ -40,8 +40,7 @@ header .nav-brand {
   grid-area: brand;
   font-size: 16px;
   font-weight: 400;
-  line-height: 32px;
-  padding-left: calc(var(--helix-core-spacing-multiplier) * 4);
+  padding-left: var(--helix-core-section-padding);
 }
 
 header nav .nav-brand .icon-pfizer-logo-color {
@@ -52,6 +51,7 @@ header nav .nav-brand .icon-pfizer-logo-color {
 
 header nav .nav-brand p {
   margin: 0;
+  line-height: 0;
 }
 
 header nav .nav-brand img {
@@ -236,8 +236,13 @@ header nav .nav-tools p {
   header nav {
     display: flex;
     justify-content: space-between;
-    height: var(--nav-height);
-    padding: 0 2rem;
+    padding: 0 var(--helix-core-section-padding);
+    height: var(--nav-height-lg);
+    max-width: calc(var(--max-width-lg) + (var(--helix-core-section-padding) * 2));
+  }
+
+  header .nav-brand { 
+    padding-left: 0;
   }
 
 

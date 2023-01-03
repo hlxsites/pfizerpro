@@ -19,14 +19,14 @@
 }
 
 .section.cards-with-background-right-container {
-    max-width: 75rem;
+    max-width: var(--max-width-lg);
 }
 
 
 .section.cards-container .cards-wrapper,
 .section.cards-with-background-container .cards-with-background-wrapper,
 .section.cards-with-background-right-container .cards-with-background-right-wrapper  {
-    max-width: 75rem;
+    max-width: var(--max-width-lg);
 }
 
 .section.cards-with-background-container .default-content-wrapper picture {
