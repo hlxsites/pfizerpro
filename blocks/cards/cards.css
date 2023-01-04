@@ -20,6 +20,7 @@
 
 .section.cards-with-background-right-container {
     max-width: var(--max-width-lg);
+    padding: 0;
 }
 
 
@@ -50,14 +51,6 @@
 }
 
 @media (min-width: 768px){
-    .cards-container .default-content-wrapper {
-        padding: var(--helix-core-section-padding);
-    }
-
-    .cards-container .cards-wrapper {
-        padding: var(--helix-core-section-padding);
-    }
-    
     .section.cards-with-background-right-container .default-content-wrapper picture {
         display: unset;
         position: absolute;

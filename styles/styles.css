@@ -1032,10 +1032,17 @@ main input:hover {
   border: 1px solid var(--text-color);
 }
 
-main .section {
+main .section, main .padded-section {
   padding: var(--helix-core-section-padding);
   margin: 1em auto;
   max-width: var(--max-width-lg);
+}
+
+/* same as --max-width-lg variable, but can tuse variables in media queries */
+@media (min-width: 1200px) { 
+  main .section, main .padded-section  {
+    padding: 0;
+  }
 }
 
 main .section.well {
