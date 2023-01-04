@@ -159,6 +159,7 @@ function letterProductGroup(products, letter) {
 }
 
 function alphabitGlossary(products, block) {
+  const glossaryContainer = element('div', 'product-glossary-container');
   const glossary = element('div', 'product-glossary');
   LETTERS.split('')
     .map((l) => {
@@ -214,7 +215,7 @@ function alphabitGlossary(products, block) {
     ([e]) => e.target.classList.toggle('is-pinned', e.intersectionRatio < 1),
     { threshold: [1] },
   );
-  observer.observe(glossary);
+  observer.observe(glossaryContainer);
 
   const buttons = glossary.querySelectorAll(
     '.product-glossary-button:not(:disabled)',
@@ -230,7 +231,8 @@ function alphabitGlossary(products, block) {
     });
   });
 
-  return glossary;
+  glossaryContainer.append(glossary);
+  return glossaryContainer;
 }
 
 /**
