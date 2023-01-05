@@ -1041,7 +1041,7 @@ main .section, main .padded-section {
 /* same as --max-width-lg variable, but can tuse variables in media queries */
 @media (min-width: 1200px) { 
   main .section, main .padded-section  {
-    padding: 0;
+    padding: 1em 0;
   }
 }
 
