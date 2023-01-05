@@ -871,8 +871,15 @@
 
   /* desktop max width */
   --max-width-lg: 1200px;
+  --helix-core-top-bar-height: 44px;
+
 }
 
+@media (min-width: 576px) {
+  :root {
+    --helix-core-top-bar-height: 36px;
+  }
+}
 
 @media (min-width: 768px) {
   :root {
@@ -910,6 +917,16 @@ body.appear {
   display: unset;
 }
 
+/* better communlative layout shifting  */
+header .header{
+  min-height: calc(64px + var(--helix-core-top-bar-height));
+}
+
+@media (min-width: 1200px) {
+  header .header {
+    min-height: calc(96px + var(--helix-core-top-bar-height));
+  }
+}
 
 h1,
 h2,
