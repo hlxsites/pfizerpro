@@ -31,13 +31,13 @@ export default async function decorate(block) {
     nav.innerHTML = html;
     decorateIcons(nav);
 
-    const classes = ['brand', 'sections', 'tools'];
+    const classes = ['top-bar', 'brand', 'sections', 'tools'];
     classes.forEach((e, j) => {
       const section = nav.children[j];
       if (section) section.classList.add(`nav-${e}`);
     });
 
-    const navSections = [...nav.children][1];
+    const navSections = [...nav.children][2];
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
         if (navSection.querySelector('ul')) {
