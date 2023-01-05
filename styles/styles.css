@@ -828,7 +828,9 @@
   --helix-core-divider-size-medium: 2px;
   --helix-core-divider-size-large: 4px;
   --helix-core-divider-color: var(--helix-core-neutrals-neutral-light);
-  --helix-core-section-padding: calc(var(--helix-core-spacing-multiplier) * 4);
+  --helix-core-section-padding-top-bottom: calc(var(--helix-core-spacing-multiplier) * 4);
+  --helix-core-section-padding-left-right: calc(var(--helix-core-spacing-multiplier) * 4);
+  --helix-core-section-padding: var(--helix-core-section-padding-top-bottom) var(--helix-core-section-padding-left-right);
 
   /* // vars from pfizer code */
 
@@ -870,6 +872,20 @@
   /* desktop max width */
   --max-width-lg: 1200px;
 }
+
+
+@media (min-width: 768px) {
+  :root {
+    --helix-core-section-padding-left-right: calc(var(--helix-core-spacing-multiplier) * 8);
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --helix-core-section-padding-left-right: calc(var(--helix-core-spacing-multiplier) * 4);
+  }
+}
+
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
@@ -1036,13 +1052,6 @@ main .section, main .padded-section {
   padding: var(--helix-core-section-padding);
   margin: 1em auto;
   max-width: var(--max-width-lg);
-}
-
-/* same as --max-width-lg variable, but can tuse variables in media queries */
-@media (min-width: 1200px) { 
-  main .section, main .padded-section  {
-    padding: 0;
-  }
 }
 
 main .section.well {

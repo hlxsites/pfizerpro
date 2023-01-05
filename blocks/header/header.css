@@ -1,6 +1,7 @@
 :root {
   --helix-core-logo-width: 68px;
-  --helix-core-nav-left-padding: calc(var(--helix-core-spacing-multiplier) * 4);
+  --helix-core-nav-left-padding: var(--helix-core-section-padding-left-right);
+  --helix-core-top-bar-height: 36px;
 }
 
 /* header and nav layout */
@@ -19,7 +20,7 @@ header nav {
   font-family: var(--body-font-family);
   background: var(--helix-core-neutrals-white);
   margin: 0 auto;
-
+  margin-top: var(--helix-core-top-bar-height);
 }
 
 header nav a:any-link {
@@ -40,12 +41,51 @@ header .nav-brand {
   grid-area: brand;
   font-size: 16px;
   font-weight: 400;
-  padding-left: var(--helix-core-section-padding);
+  padding-left: var(--helix-core-section-padding-left-right);
 }
 
 header nav .nav-brand .icon-pfizer-logo-color {
   display: block;
   width: var(--helix-core-logo-width);
+}
+
+header nav .nav-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--helix-core-top-bar-height);
+  padding: 8px 0;
+  background-color: var(--helix-core-primary-dark-primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+  align-content: center;
+}
+
+header nav .nav-top-bar .top-bar {
+  display: flex;
+  align-content: center;
+  width: 100%;
+}
+
+header nav .nav-top-bar .top-bar > div {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 var(--helix-core-section-padding-left-right);
+}
+
+header nav .nav-top-bar p {
+  margin: 0;
+}
+
+header nav .nav-top-bar .top-bar a:any-link {
+  font-size: 14px;
+  text-decoration: underline;
 }
 
 
@@ -229,22 +269,28 @@ header nav .nav-tools p {
   margin: 0;
 }
 
-
-
 /* desktop nav styles */
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
+  header {
+    box-shadow: 0 2px 4px -2px rgb(24 39 75 / 12%), 0 4px 4px -2px rgb(24 39 75 / 8%);
+  }
+
   header nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 var(--helix-core-section-padding);
+    padding: 0 var(--helix-core-section-padding-left-right);
     height: var(--nav-height-lg);
-    max-width: calc(var(--max-width-lg) + (var(--helix-core-section-padding) * 2));
+    max-width: calc(var(--max-width-lg) + (var(--helix-core-section-padding-left-right) * 2));
+  }
+
+  header nav .nav-top-bar .top-bar {
+    max-width: var(--max-width-lg);
+    margin: 0 auto;
   }
 
   header .nav-brand { 
     padding-left: 0;
   }
-
 
   header nav .nav-hamburger {
     display: none;
@@ -294,12 +340,12 @@ header nav .nav-tools p {
     cursor: pointer;
     padding-top: 0;
     padding-bottom: 0;
+    color: var(--helix-core-primary-primary);
   }
 
 
   header nav .nav-sections > ul > li.nav-drop {
     position: relative;
-    color: rgb(56 56 56);
   }
 
   header nav .nav-sections > ul > li > ul {
@@ -371,7 +417,9 @@ header nav .nav-tools p {
   header nav .nav-sections > ul > li.nav-drop:hover > ul {
     display: block;
     position: absolute;
-    top: 40px;
+    top: var(--nav-height-lg);
+    margin-top: 0;
+    padding-top: 1em;
     left: 0;
     background-color: white;
     min-width: 250px;
@@ -380,5 +428,4 @@ header nav .nav-tools p {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
-
 }

@@ -18,9 +18,11 @@
     max-width: unset;
 }
 
-.section.cards-with-background-right-container {
-    max-width: var(--max-width-lg);
-    padding: 0;
+@media (min-width: 1200px){
+    .section.cards-with-background-right-container {
+        max-width: var(--max-width-lg);
+        padding: var(--helix-core-section-padding);
+    }
 }
 
 
@@ -54,13 +56,16 @@
     .section.cards-with-background-right-container .default-content-wrapper picture {
         display: unset;
         position: absolute;
-        right: 0;
+        right: var(--helix-core-section-padding-left-right);
         left: 50%;
         z-index: -1;
         bottom: 0;
         height: calc(100% - 80px);
-        object-fit: cover;
         max-width: unset;
+    }
+
+    .section.cards-with-background-right-container .default-content-wrapper picture img {
+        object-fit: unset;
     }
 
     .section.cards-with-background-container::before {
