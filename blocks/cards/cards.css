@@ -82,6 +82,7 @@
 :is(.cards-container, .cards-with-background-container, .cards-with-background-right-container) .default-content-wrapper picture img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .section.cards-with-background-container .cards {
