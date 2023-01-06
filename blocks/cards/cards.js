@@ -1,4 +1,15 @@
+function addLabelsToIconButtons(block) {
+  block.querySelectorAll('.icon').forEach((icon) => {
+    if (icon.parentElement.tagName === 'A') {
+      const parentDiv = icon.closest('div');
+      const text = parentDiv.querySelector('h3').textContent;
+      icon.parentElement.ariaLabel = text;
+    }
+  });
+}
+
 export default function decorate(block) {
+  addLabelsToIconButtons(block);
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
