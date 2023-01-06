@@ -351,9 +351,15 @@ export async function loadBlock(block) {
     try {
       const cssLoaded = new Promise((resolve) => {
         if (blockName.startsWith('cards')) {
-          loadCSS(`${window.hlx.codeBasePath}/blocks/cards/cards.css`, resolve);
+          if (!window.helixCardCSSRequestted) {
+            window.helixCardCSSRequestted = true;
+            loadCSS(`${window.hlx.codeBasePath}/blocks/cards/cards.css`, resolve);
+          } else {
+            resolve('noop');
+          }
+        } else {
+          loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
         }
-        loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
       });
       const decorationComplete = new Promise((resolve) => {
         (async () => {
