@@ -4,7 +4,7 @@
 }
 
 header .header[data-block-status="loaded"] {
-  min-height: 0;
+  height: unset;
 }
 
 /* header and nav layout */
