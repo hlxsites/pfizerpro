@@ -9,7 +9,6 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
   /* vars from pfizer code */
@@ -918,13 +917,17 @@ body.appear {
 }
 
 /* better communlative layout shifting  */
-header .header{
-  min-height: calc(64px + var(--helix-core-top-bar-height));
+header .header {
+  height: calc(64px + var(--helix-core-top-bar-height));
+}
+
+header nav {
+  display: none;
 }
 
 @media (min-width: 1200px) {
   header .header {
-    min-height: calc(96px + var(--helix-core-top-bar-height));
+    height: calc(96px + var(--helix-core-top-bar-height));
   }
 }
 
